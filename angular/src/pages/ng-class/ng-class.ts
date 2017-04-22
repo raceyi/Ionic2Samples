@@ -1,0 +1,38 @@
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
+
+/**
+ * Generated class for the NgClass page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+@Component({
+  selector: 'page-ng-class',
+  templateUrl: 'ng-class.html',
+})
+export class NgClass {
+
+  bold:boolean=false;
+  italic:boolean=false;
+  large:boolean=false;
+
+  currentClasses: {};
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad NgClass');
+  }
+
+  setCurrentClasses() {
+    // CSS classes: added/removed per current state of component properties
+    this.currentClasses =  {
+      bold:   this.bold,
+      italic: this.italic,
+      large:  this.large
+    };
+  }
+
+}
