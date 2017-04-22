@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      ngStyle
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <br>
+  <br>
+  <div [ngStyle]="currentStyles">
+     This div is initially italic, normal weight, and extra large (24px).
+  </div>
+  <br>
+  <br>
+
+<ion-list>
+<ion-item>
+  <ion-label>bold</ion-label>
+  <ion-checkbox [(ngModel)]="bold" (ionChange)="setCurrentStyles()" color="dark" checked="false"></ion-checkbox>
+</ion-item>
+<ion-item>
+  <ion-label>italic</ion-label>
+  <ion-checkbox [(ngModel)]="italic" (ionChange)="setCurrentStyles()" color="dark" checked="false"></ion-checkbox>
+</ion-item>
+<ion-item>
+  <ion-label>large</ion-label>
+  <ion-checkbox [(ngModel)]="large" (ionChange)="setCurrentStyles()" color="dark" checked="false"></ion-checkbox>
+</ion-item>
+</ion-list>    
+
+  <br>
+  <br>
+  <div [style.font-size]="fontSize" >
+    This div is x-large or smaller.
+  </div>
+ <ion-segment [(ngModel)]="fontSize" (ionChange)="change()">
+    <ion-segment-button value="x-large" >
+      x-large
+    </ion-segment-button>
+    <ion-segment-button value="smaller">
+      smaller
+    </ion-segment-button>
+  </ion-segment>
+  <br>
+</ion-content>
