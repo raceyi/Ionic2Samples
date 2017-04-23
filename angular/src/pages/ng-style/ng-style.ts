@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { MyData } from '../../providers/my-data';
+/**
 /**
  * Generated class for the NgStyle page.
  *
@@ -15,6 +16,7 @@ export class NgStyle {
   bold:boolean=false;
   italic:boolean=false;
   large:boolean=false;
+  appName:string;
 
   currentStyles = {
     'font-style': 'normal',
@@ -24,7 +26,8 @@ export class NgStyle {
 
   fontSize:string='x-large';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private myData:MyData) {
+    this.appName=myData.getAppName();  
   }
 
   ionViewDidLoad() {

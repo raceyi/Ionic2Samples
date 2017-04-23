@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { MyData } from '../../providers/my-data';
+/**
 /**
  * Generated class for the Structural page.
  *
@@ -14,8 +15,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class Structural {
   weather:string; 
   months=["Jan","Feb","Mar","April","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  appName:string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private myData:MyData) {
+    this.appName=myData.getAppName();
   }
 
   ionViewDidLoad() {

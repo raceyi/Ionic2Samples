@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import { MyData } from '../../providers/my-data';
 /**
  * Generated class for the NgClass page.
  *
@@ -16,10 +16,12 @@ export class NgClass {
   bold:boolean=false;
   italic:boolean=false;
   large:boolean=false;
+  appName:string;
 
   currentClasses: {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private myData:MyData) {
+      this.appName=myData.getAppName();
   }
 
   ionViewDidLoad() {
