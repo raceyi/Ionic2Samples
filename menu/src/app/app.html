@@ -1,0 +1,11 @@
+<ion-menu [content]="content">
+<ion-content>
+     <button ion-button icon-left full menuClose (click)="openSettingPage()">
+        <ion-icon name="settings"></ion-icon>설정  
+      </button>
+      <button ion-button icon-left full menuClose (click)="exit()">
+        <ion-icon name="log-out"></ion-icon>종료  
+      </button>
+</ion-content>    
+</ion-menu>
+<ion-nav #content [root]="rootPage" ></ion-nav>
