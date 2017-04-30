@@ -1,33 +1,70 @@
-import { Component ,ViewChild} from '@angular/core';
-import { NavController, NavParams,Tabs } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { IonicPage, NavController, NavParams, App} from 'ionic-angular';
 
-
-import { Page1Page } from '../page1/page1';
-import { Page2Page } from '../page2/page2';
-import { Page3Page } from '../page3/page3';
-
-/*
-  Generated class for the NextTabs page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+import { NextAbout } from '../next-about/next-about';
+import { NextContact } from '../next-contact/next-contact';
+import { NextHome } from '../next-home/next-home';
+import { NextExit } from '../next-exit/next-exit';
+import {StorageProvider} from '../../providers/storage-provider';
+/**
+ * Generated class for the NextTabs page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
 @Component({
-  templateUrl: 'next-tabs.html'
+  selector: 'page-next-tabs',
+  templateUrl: 'next-tabs.html',
 })
-export class NextTabsPage {
+export class NextTabs {
+  tab0Root = NextExit;
+  tab1Root = NextHome;
+  tab2Root = NextAbout;
+  tab3Root = NextContact;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams
+              ,private app:App,private storageProvider:StorageProvider) {
+      console.log('NextTabs constructor');
+  }
 
-@ViewChild('nextTabs') tabRef: Tabs;
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad NextTabs');
+  }
 
-  tab1Root: any = Page1Page;
-  tab2Root: any = Page2Page;
+  nextExit(){
+     console.log("NextExit tab selected"); 
+     this.app.getRootNav().pop();
+  }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}  
+  ionViewWillEnter(){
+    console.log("nextTabs-ionViewWillEnter");
+  }
+
+  ionViewDidEnter(){
+    console.log("nextTabs-ionViewDidEnter");
+  }
+
+  ionViewWillLeave(){
+    console.log("nextTabs-ionViewWillLeave");
+  }
 
   ionViewDidLeave(){
-    this.tabRef.select(1);
+    console.log("nextTabs-ionViewDidLeave");
   }
+
+  ionViewWillUnload(){
+    console.log("nextTabs-ionViewWillUnload");
+    this.storageProvider.getTabsRef().select(1);
+  }
+
+  ionViewCanEnter():boolean{
+    console.log("nextTabs-ionViewCanEnter");
+    return true;
+  }
+
+  ionViewCanLeave():boolean{
+    console.log("nextTabs-ionViewCanLeave");
+    return true;
+  }
+
 }
-
-

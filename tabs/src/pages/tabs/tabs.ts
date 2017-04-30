@@ -1,28 +1,60 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component,ViewChild } from '@angular/core';
+import {Tabs} from 'ionic-angular';
 
-import { HomePage } from '../home/home';
 import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
-import { ExitPage } from '../exit/exit';
+import { HomePage } from '../home/home';
+
+import {StorageProvider} from '../../providers/storage-provider';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  tab1Root: any = HomePage;
-  tab2Root: any = AboutPage;
-  tab3Root: any = ContactPage;
-  tab4Root: any = ExitPage;
+  
+  @ViewChild('tabs') tabsRef:Tabs;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  tab1Root = HomePage;
+  tab2Root = AboutPage;
+  tab3Root = ContactPage;
 
+  constructor(private storageProvider:StorageProvider) {
+    console.log("tabs-constructor");
+   // console.log("tabs-constructor: "+ this.tabsRef.selectedIndex);
   }
 
-  exit(){
-    this.navCtrl.pop();
+  ionViewDidLoad(){
+    this.storageProvider.setTabsRef(this.tabsRef);
+    console.log("tabs-ionViewDidLoad: "+ this.tabsRef.selectedIndex);
   }
 
+  ionViewWillEnter(){
+    console.log("tabs-ionViewWillEnter");
+  }
+
+  ionViewDidEnter(){
+    console.log("tabs-ionViewDidEnter");
+  }
+
+  ionViewWillLeave(){
+    console.log("tabs-ionViewWillLeave");
+  }
+
+  ionViewDidLeave(){
+    console.log("tabs-ionViewDidLeave");
+  }
+
+  ionViewWillUnload(){
+    console.log("tabs-ionViewWillUnload");
+  }
+
+  ionViewCanEnter():boolean{
+    console.log("tabs-ionViewCanEnter");
+    return true;
+  }
+
+  ionViewCanLeave():boolean{
+    console.log("tabs-ionViewCanLeave");
+    return true;
+  }
 }

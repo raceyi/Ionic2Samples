@@ -1,20 +1,24 @@
 import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { LoginPage } from '../pages/login/login';
+
+import { NextAbout } from '../pages/next-about/next-about';
+import { NextContact } from '../pages/next-contact/next-contact';
+import { NextHome } from '../pages/next-home/next-home';
+import { NextTabs } from '../pages/next-tabs/next-tabs';
+import { NextExit } from '../pages/next-exit/next-exit';
+import { NextPage } from '../pages/next-page/next-page';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { Page1Page } from '../pages/page1/page1';
-import { Page2Page } from '../pages/page2/page2';
-import { Page3Page } from '../pages/page3/page3';
-import { ExitPage } from '../pages/exit/exit';
-
-import { NextTabsPage } from '../pages/next-tabs/next-tabs';
+import {StorageProvider} from '../providers/storage-provider';
 
 @NgModule({
   declarations: [
@@ -23,14 +27,15 @@ import { NextTabsPage } from '../pages/next-tabs/next-tabs';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage,
-    Page1Page,
-    Page2Page,
-    Page3Page,
-    ExitPage,
-    NextTabsPage
+    NextPage,
+    NextExit,
+    NextAbout,
+    NextContact,
+    NextHome,
+    NextTabs
   ],
   imports: [
+    BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -40,16 +45,18 @@ import { NextTabsPage } from '../pages/next-tabs/next-tabs';
     ContactPage,
     HomePage,
     TabsPage,
-    LoginPage,
-    Page1Page,
-    Page2Page,
-    Page3Page,
-    ExitPage,
-    NextTabsPage
+    NextPage,
+    NextExit,
+    NextAbout,
+    NextContact,
+    NextHome,
+    NextTabs
   ],
   providers: [
+    StorageProvider,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}]
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
+  ]
 })
 export class AppModule {}
