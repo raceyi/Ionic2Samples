@@ -30,7 +30,7 @@ import { MenuModule } from '../pages/menu/menu.module';
     CartModule,
     MenuModule,
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{mode:'ios'})
   ],
   bootstrap: [IonicApp],
   entryComponents: [
