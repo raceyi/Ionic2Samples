@@ -14,32 +14,32 @@ page-next {
     .tabs-ios {
         a[aria-selected=false] {
             .tab-button-icon[ng-reflect-name=menu], .tab-button-icon[aria-label="menu outline"] {
-                background-image: url(../../assets/icon/icon.png);
+                background-image: url(../assets/icon/icon.png);
             }
         }
         a[aria-selected=true] {
                   .tab-button-icon[ng-reflect-name=menu], .tab-button-icon[aria-label=menu] {
-                background-image: url(../../assets/icon/acitve-icon.png);
+                background-image: url(../assets/icon/acitve-icon.png);
             }
         }
         a[aria-selected=false] {
             .tab-button-icon[ng-reflect-name=cart], .tab-button-icon[aria-label="cart outline"] {
-                background-image: url(../../assets/icon/tabNew1.png);
+                background-image: url(../assets/icon/icon.png);
             }
         }
         a[aria-selected=true] {
                   .tab-button-icon[ng-reflect-name=cart], .tab-button-icon[aria-label=cart] {
-                background-image: url(../../assets/icon/tabNew1-active.png);
+                background-image: url(../assets/icon/active-icon.png);
             }
         }        
         a[aria-selected=false] {
             .tab-button-icon[ng-reflect-name=order], .tab-button-icon[aria-label="order outline"] {
-                background-image: url(../../assets/icon/tabNew1.png);
+                background-image: url(../assets/icon/icon.png);
             }
         }
         a[aria-selected=true] {
                   .tab-button-icon[ng-reflect-name=order], .tab-button-icon[aria-label=order] {
-                background-image: url(../../assets/icon/tabNew1-active.png);
+                background-image: url(../assets/icon/active-icon.png);
             }
         }        
 
