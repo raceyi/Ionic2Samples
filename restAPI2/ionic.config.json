@@ -1,0 +1,16 @@
+{
+  "name": "restAPI2",
+  "app_id": "",
+  "v2": true,
+  "typescript": true,
+  "proxies": [
+    {
+      "path": "/login",
+      "proxyUrl": "http://www.takit.biz:8080/login"
+    },
+    {
+      "path": "/getInfo",
+      "proxyUrl": "http://www.takit.biz:8080/getInfo"
+    }
+  ]
+}

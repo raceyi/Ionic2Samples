@@ -11,7 +11,13 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import{ServerProvider} from '../providers/server-provider';
+import{StorageProvider} from '../providers/storage-provider';
+import { NativeStorage } from '@ionic-native/native-storage';
+
 import { LoginPage } from '../pages/login/login';
+
+import { HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +30,7 @@ import { LoginPage } from '../pages/login/login';
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -36,6 +43,9 @@ import { LoginPage } from '../pages/login/login';
     LoginPage
   ],
   providers: [
+    NativeStorage,
+    StorageProvider,
+    ServerProvider,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
