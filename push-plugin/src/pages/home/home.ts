@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,NgZone} from '@angular/core';
 import { NavController,Platform } from 'ionic-angular';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 
@@ -8,8 +8,9 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
 })
 export class HomePage {
   pushObject: PushObject;
+  registrationId;
 
-  constructor(public navCtrl: NavController,private push: Push,private platform:Platform) {
+  constructor(public navCtrl: NavController,private push: Push,private platform:Platform,private ngZone:NgZone) {
      platform.ready().then(() => {
         this.push.hasPermission()
           .then((res: any) => {
@@ -26,8 +27,8 @@ export class HomePage {
                 senderID: '707840956057'
             },
             ios: {
-                gcmSandbox: 'true', //development mode
-                //gcmSandbox: 'false',//production mode
+               // gcmSandbox: 'true', //development mode
+                gcmSandbox: 'false',//production mode
                 alert: 'true',
                 badge: true,
                 sound: 'true'
@@ -38,10 +39,14 @@ export class HomePage {
 
           this.pushObject.on('notification').subscribe((notification: any) =>{
               console.log('Received a notification', JSON.stringify(notification))
+              alert
           });
 
           this.pushObject.on('registration').subscribe((registration: any) =>{
               console.log('Device registered', JSON.stringify(registration));
+              this.ngZone.run(()=>{
+                  this.registrationId=registration.registrationId;
+              });
           });
 
           this.pushObject.on('error').subscribe(error => {
