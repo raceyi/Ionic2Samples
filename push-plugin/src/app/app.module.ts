@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
+import {Clipboard} from '@ionic-native/clipboard';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { Push, PushObject, PushOptions } from '@ionic-native/push';
     StatusBar,
     SplashScreen,
     Push,
+    Clipboard,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

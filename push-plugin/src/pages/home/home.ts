@@ -1,6 +1,7 @@
 import { Component ,NgZone} from '@angular/core';
 import { NavController,Platform } from 'ionic-angular';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
+import {Clipboard} from '@ionic-native/clipboard';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +11,9 @@ export class HomePage {
   pushObject: PushObject;
   registrationId;
 
-  constructor(public navCtrl: NavController,private push: Push,private platform:Platform,private ngZone:NgZone) {
+  constructor(public navCtrl: NavController,private push: Push,
+        private platform:Platform,private ngZone:NgZone,
+        private clipboard:Clipboard) {
      platform.ready().then(() => {
         this.push.hasPermission()
           .then((res: any) => {
@@ -27,8 +30,8 @@ export class HomePage {
                 senderID: '707840956057'
             },
             ios: {
-               // gcmSandbox: 'true', //development mode
-                gcmSandbox: 'false',//production mode
+                gcmSandbox: 'true', //development mode
+               // gcmSandbox: 'false',//production mode
                 alert: 'true',
                 badge: true,
                 sound: 'true'
@@ -47,6 +50,7 @@ export class HomePage {
               this.ngZone.run(()=>{
                   this.registrationId=registration.registrationId;
               });
+              this.clipboard.copy(this.registrationId);
           });
 
           this.pushObject.on('error').subscribe(error => {
