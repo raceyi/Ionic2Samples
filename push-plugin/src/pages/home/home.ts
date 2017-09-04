@@ -25,11 +25,14 @@ export class HomePage {
             }
           });
 
+          console.log("android ...");
+
           const options: PushOptions = {
             android: {
-                senderID: '707840956057'
+                senderID: '836964428266'
             },
             ios: {
+                senderID: '836964428266',
                 gcmSandbox: 'true', //development mode
                // gcmSandbox: 'false',//production mode
                 alert: 'true',
@@ -42,11 +45,21 @@ export class HomePage {
 
           this.pushObject.on('notification').subscribe((notification: any) =>{
               console.log('Received a notification', JSON.stringify(notification))
-              alert
+              this.pushObject.getApplicationIconBadgeNumber().then(number=>{
+                console.log("badge count:"+number);
+              });
+              //this.pushObject.clearAllNotifications();
+              this.pushObject.setApplicationIconBadgeNumber(0).then(()=>{
+
+              },err=>{
+
+              });
+
           });
 
           this.pushObject.on('registration').subscribe((registration: any) =>{
               console.log('Device registered', JSON.stringify(registration));
+              console.log("registrationId:"+registration.registrationId);
               this.ngZone.run(()=>{
                   this.registrationId=registration.registrationId;
               });
