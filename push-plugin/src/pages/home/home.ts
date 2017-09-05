@@ -32,11 +32,9 @@ export class HomePage {
                 senderID: '836964428266'
             },
             ios: {
-                senderID: '836964428266',
-                gcmSandbox: 'true', //development mode
-               // gcmSandbox: 'false',//production mode
+                gcmSandbox: 'true', // 'true': development, 'false':production
                 alert: 'true',
-                badge: true,
+                badge: 'true',
                 sound: 'true'
             }
           };
@@ -48,8 +46,10 @@ export class HomePage {
               this.pushObject.getApplicationIconBadgeNumber().then(number=>{
                 console.log("badge count:"+number);
               });
-              //this.pushObject.clearAllNotifications();
+
+              
               this.pushObject.setApplicationIconBadgeNumber(0).then(()=>{
+              //It is the same as this.pushObject.clearAllNotifications();
 
               },err=>{
 
