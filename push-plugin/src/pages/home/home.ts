@@ -29,7 +29,7 @@ export class HomePage {
 
           const options: PushOptions = {
             android: {
-                senderID: '836964428266'
+                senderID: 'XXXXXXXX' 
             },
             ios: {
                 gcmSandbox: 'true', // 'true': development, 'false':production
