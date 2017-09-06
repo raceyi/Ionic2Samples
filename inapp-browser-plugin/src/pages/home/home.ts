@@ -10,7 +10,7 @@ export class HomePage {
   browserRef;
   certUrl="XXXX";
   successUrl="XXXX";
-  failureUrl="xxxx";
+  failureUrl="XXXX";
 
   constructor(public navCtrl: NavController,private platform:Platform
             ,private iab: InAppBrowser) {
@@ -30,6 +30,15 @@ export class HomePage {
                   console.log("InAppBrowserEvent(exit):"+JSON.stringify(event)); 
                   this.browserRef.close();
       });
+
+
+      this.browserRef.on("loadstop").subscribe((event:InAppBrowserEvent)=>{
+            console.log("loadstop");
+      });
+
+      this.browserRef.on("loaderror").subscribe((event:InAppBrowserEvent)=>{
+            console.log("loaderror");
+      });
 
       this.browserRef.on("loadstart").subscribe((event:InAppBrowserEvent)=>{
           console.log("InAppBrowserEvent(loadstart):"+String(event.url));
