@@ -31,13 +31,7 @@ export class HomePage {
               KakaoTalk.login(
                     (userProfile)=>{
                         console.log("userProfile:"+JSON.stringify(userProfile));
-                        var id;
-                        if(typeof userProfile === "string"){
-                                id=userProfile;
-                        }else{ // humm... userProfile data type changes. Why?
-                                id=userProfile.id;
-                        }
-                        console.log('Successful kakaotalk login with'+id);
+                        console.log('Successful kakaotalk login');
                         /* !!! Add App server login here !!!*/
                     },
                     (err)=> {
