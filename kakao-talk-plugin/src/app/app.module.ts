@@ -4,10 +4,13 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AppAvailability } from '@ionic-native/app-availability';
-
+import {Http,Headers} from '@angular/http';
+import {HttpModule} from '@angular/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import {MyErrorHandler} from '../classes/my-error-handler';
+import { InAppBrowser,InAppBrowserEvent } from '@ionic-native/in-app-browser';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,7 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   imports: [
+    HttpModule,
     BrowserModule,
     IonicModule.forRoot(MyApp)
   ],
@@ -27,7 +31,8 @@ import { HomePage } from '../pages/home/home';
     StatusBar,
     SplashScreen,
     AppAvailability,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    InAppBrowser,
+    {provide: ErrorHandler, useClass: MyErrorHandler}
   ]
 })
 export class AppModule {}
