@@ -12,8 +12,8 @@ declare var KakaoTalk:any;
 })
 export class HomePage {
   browserRef;
-  restAPIKey="d4f0013dc06f2774516098f97cff5dd0";
-  kakaoOauthUrl="https://takit.biz/oauth"; 
+  restAPIKey="XXXXXXXX";
+  kakaoOauthUrl="XXXXXXX"; 
 
   constructor(public navCtrl: NavController,
               private platform:Platform,
