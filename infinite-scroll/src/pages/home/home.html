@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="bg-sub1">
+    <div [ngStyle]="tr.borderStyle" class="div-transaction" *ngFor="let tr of transactions">
+        <ion-row class="row1-cashHistory">
+            <ion-col text-left>
+            <p>{{tr.date+"/"+tr.transactionName}}</p>
+            </ion-col>
+            <ion-col text-right>
+            <p>{{(tr.nowBalance*1).toLocaleString('en')}}</p>
+            </ion-col>
+        </ion-row>
+        <ion-row [ngStyle]="tr.style" class="row2-cashHistory">
+            <ion-col col-8 *ngIf="tr.transactionType=='deposit'">
+                <p style="font-size:14px;"><b>캐쉬충전</b></p>
+            </ion-col>
+            <ion-col col-8 *ngIf="tr.transactionType=='refund'">
+                <p style="font-size:14px;"><b>캐쉬환불</b></p>
+            </ion-col>
+            <ion-col col-8 *ngIf="tr.transactionType=='payment'"> 
+                <p style="font-size:12px;">{{tr.orderName}}</p>
+            </ion-col>   
+            <ion-col col-8 *ngIf="tr.transactionType=='cancel'"> 
+                <p style="font-size:12px;">{{tr.orderName}}</p>
+            </ion-col>   
+            <ion-col col-4 text-right *ngIf="tr.transactionType=='cancel'">
+                <p style="font-size:15px;color:blue;"><b>+{{(tr.amount*1).toLocaleString('en')}}</b></p>
+            </ion-col>
+            <ion-col col-4 text-right *ngIf="tr.transactionType=='deposit'">
+                <p style="font-size:15px;color:blue;"><b>+{{(tr.amount*1).toLocaleString('en')}}</b></p>
+            </ion-col>
+            <ion-col col-4 text-right *ngIf="tr.transactionType=='refund' || tr.transactionType=='payment'">
+                <p style="font-size:15px;color:red;"><b>-{{(tr.amount*1).toLocaleString('en')}}</b></p>
+            </ion-col>
+        </ion-row>
+    </div>
+    <div *ngIf="!transactions || transactions.length === 0">
+        <p text-center>거래 내역이 없습니다.</p>
+    </div>
+
+ <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+   <ion-infinite-scroll-content></ion-infinite-scroll-content>
+ </ion-infinite-scroll>
+    
+</ion-content>
