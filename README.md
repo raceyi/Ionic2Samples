@@ -14,3 +14,26 @@ menu: 기본 샘플에 메뉴를 추가했다.
 
 datetime: ion-datetime의 예로 moment를 사용하여 로컬시간으로 입력을 받는다.  
 
+
+Chapter 7장
+
+   gesture
+  
+   infinite-scroll
+
+
+ 
+Chapter 8장
+ 
+    facebook-plugin
+
+    camera-plugin
+
+    inapp-browser-plugin
+
+    kakao-talk-plugin
+
+    media-plugin
+
+    push-plugin
+ 
