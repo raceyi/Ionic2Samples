@@ -1,0 +1,30 @@
+<!--
+  Generated template for the CheckInPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>checkIn</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+ <ion-item>
+    <ion-label color="primary" >고객명</ion-label>
+    <ion-input placeholder="이름을 입력해주세요." [(ngModel)]="userName"></ion-input>
+  </ion-item>
+
+<ion-row>
+  <ion-col text-center>
+      <button ion-button (click)="checkIn()"> 체크인</button>
+  </ion-col>
+  <ion-col text-center>
+      <button ion-button (click)="cancel()"> 취소</button>
+  </ion-col>
+
+</ion-row>
+
+</ion-content>
