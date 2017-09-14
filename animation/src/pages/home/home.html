@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Animation
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div  [@fade]="fadeState" style="background-color:yellow;height:50vh;" >
+    Top Area
+    <button ion-button (click)="hide()"> hide Top Area</button>
+
+  </div>
+
+  <div  [@slide]="slideState" style="background-color:green;height:50vh;">
+    Bottom Area 
+    <button ion-button *ngIf="slideState=='up'" (click)="show()"> show Top Area</button>
+  </div>
+</ion-content>
