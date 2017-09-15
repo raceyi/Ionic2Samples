@@ -18,34 +18,37 @@ datetime: ion-datetime의 예로 moment를 사용하여 로컬시간으로 입�
 
 Chapter 7장
 
-    gesture
+    1.gesture
   
-    infinite-scroll
-    
-    events
+    2.infinite-scroll
+   
+    3.ngzone-> camera-plugin참조 
+ 
+    4.events
 
-    animation
+    5.animation
 
-    transition
+    6.transition
 
-    multi-language
+    7.multi-language
 
-    backkey-handler
+    8.backkey-handler
 
-    custom-icon
+    9.custom-icon
  
 
 Chapter 8장
  
-    facebook-plugin
+    1-1)facebook-plugin
 
-    camera-plugin
+    1-2)~3)camera-plugin
+    
+    1-4)push-plugin
+ 
+    1-5)inapp-browser-plugin
 
-    inapp-browser-plugin
+    1-6)media-plugin
 
-    kakao-talk-plugin
+    2.kakao-talk-plugin
 
-    media-plugin
-
-    push-plugin
  
