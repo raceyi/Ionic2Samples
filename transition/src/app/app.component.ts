@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform,Config } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { Config } from 'ionic-angular';
-import { TabsPage } from '../pages/tabs/tabs';
-import {SlideUpTransition} from '../classes/slide-up-transition';
+import {SlideUpDownTransition} from '../classes/slide-up-down-transition';
+
+import { HomePage } from '../pages/home/home';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = TabsPage;
+  rootPage:any = HomePage;
+  constructor(public config: Config,
+          platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+   
+   this.config.setTransition('slide-up-down', SlideUpDownTransition);
 
-  constructor(public config: Config,platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    this.config.setTransition('slide-up', SlideUpTransition);
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -21,3 +23,4 @@ export class MyApp {
     });
   }
 }
+

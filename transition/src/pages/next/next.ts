@@ -1,26 +1,28 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
-import {Menu} from '../menu/menu';
-import {Order} from '../order/order';
-import {Cart} from '../cart/cart';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the Next tabs.
+ * Generated class for the NextPage page.
  *
- * See https://angular.io/docs/ts/latest/guide/dependency-injection.html for
- * more info on providers and Angular DI.
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
  */
+
+@IonicPage()
 @Component({
   selector: 'page-next',
-  templateUrl: 'next.html'
+  templateUrl: 'next.html',
 })
-@IonicPage()
-export class Next {
+export class NextPage {
 
-  tab1Root: any = Menu;
-  tab2Root: any = Order;
-  tab3Root: any = Cart;
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
-  constructor(public navCtrl: NavController) {}
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad NextPage');
+  }
 
+  homePage(){
+    this.navCtrl.pop({animate:true,animation: 'slide-up-down', direction: 'back' });  
+  }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController ,App} from 'ionic-angular';
-import {Next} from '../next/next';
+import { NavController } from 'ionic-angular';
+import {NextPage} from '../next/next';
 
 @Component({
   selector: 'page-home',
@@ -8,13 +8,13 @@ import {Next} from '../next/next';
 })
 export class HomePage {
 
-  constructor(private app:App,public navCtrl: NavController) {
+  constructor(public navCtrl: NavController) {
 
   }
 
-  move(){
-      this.app.getRootNav().push(Next,{},{animate:true,animation: 'slide-up', direction: 'forward' });
-      //this.app.getRootNav().push(Next,{},{});
+  nextPage(){
+    console.log("move into next Page");
+    this.navCtrl.push(NextPage,{},{animate:true,animation: 'slide-up-down', direction: 'forward' });
   }
 
 }

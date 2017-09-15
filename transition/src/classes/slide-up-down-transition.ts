@@ -2,12 +2,12 @@ import { Animation } from 'ionic-angular/animations/animation';
 import { isPresent } from 'ionic-angular/util/util';
 import { PageTransition } from 'ionic-angular/transitions/page-transition';
 
-const DURATION = 10000;
+const DURATION = 500;
 const OPACITY = 'opacity';
 const TRANSPARENT = 0;
 const OPAQUE = 1;
 
-export class SlideUpTransition extends PageTransition {
+export class SlideUpDownTransition extends PageTransition {
 
   init() {
       console.log("SlideUpTransition");
@@ -22,35 +22,28 @@ export class SlideUpTransition extends PageTransition {
     const backDirection = (opts.direction === 'back');
 
     if (enteringView) {
-        console.log("enteringView");
       const enteringPageEle: Element = enteringView.pageRef().nativeElement;
 
       const enteringContent = new Animation(this.plt,enteringView.pageRef());
       this.add(enteringContent);
-      this.easing('ease').duration(1000); //effect 시간 
-      if (backDirection) {
-          enteringContent.fromTo(OPACITY, OPAQUE, OPAQUE, true);
-          enteringContent.fromTo('translateY', '0%', '100%');          
-      } else {
+      if (!backDirection) {
           enteringContent.fromTo(OPACITY, OPAQUE, OPAQUE, true);
           enteringContent.fromTo('translateY', '100%', '0%');
       }
     }
 
-    if (leavingView && leavingView.pageRef()) {
-      console.log("leavingView");
-
+    if (leavingView && leavingView.pageRef()) { 
       const leavingPageEle: Element = leavingView.pageRef().nativeElement;
       const leavingContent = new Animation( this.plt,leavingView.pageRef());
 
-      //this.add(leavingContent);
+      this.add(leavingContent);
 
       if (backDirection) {
-        //leavingContent.fromTo(OPACITY, OPAQUE, TRANSPARENT, false);
-      } else {
-        //leavingContent.fromTo(OPACITY, OPAQUE, OPAQUE, false);
+            leavingContent.fromTo(OPACITY, OPAQUE, TRANSPARENT, false);
+            leavingContent.fromTo('translateY', '0%', '100%');          
       }
     }
+
   }
 
 }

@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { Next } from './next';
+import { NextPage } from './next';
 
 @NgModule({
   declarations: [
-    Next,
+    NextPage,
   ],
   imports: [
-    IonicPageModule.forChild(Next),
-  ]
+    IonicPageModule.forChild(NextPage),
+  ],
 })
-export class NextModule {}
+export class NextPageModule {}
