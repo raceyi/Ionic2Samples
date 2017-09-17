@@ -32,10 +32,11 @@ Chapter 7장
 
     7.multi-language
 
-    8.backkey-handler
+    8.backkey-handler -> transtion참조
 
     9.custom-icon
- 
+    
+    10.custom-compoent
 
 Chapter 8장
  
