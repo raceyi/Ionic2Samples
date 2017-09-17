@@ -1,0 +1,18 @@
+<!-- Generated template for the MenuItemComponent component -->
+<ion-grid>
+    <ion-row>
+      <ion-col>
+          <button ion-button clear class="menuImgButton" (click)="click()"><img [src]="menu.fullpath"  class="menuImg" ></button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="MenuText">{{menu.menuName}}</p>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <p class="MenuText">{{menu.price}}</p>
+      </ion-col>
+    </ion-row>
+</ion-grid>
