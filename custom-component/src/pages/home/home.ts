@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import {OrderPage} from '../order/order';
 
 @Component({
   selector: 'page-home',
@@ -15,6 +16,8 @@ export class HomePage {
   remoteStorage:string="https://s3.ap-northeast-2.amazonaws.com/takitkorea/";
 
   serverResponse:string;
+  
+  menuShown:boolean=false;
 
   constructor(public navCtrl: NavController) {
 
@@ -95,6 +98,13 @@ categoryChange(category){
 
 select(menu){
   console.log("select-menu:"+JSON.stringify(menu));
+  if(!this.menuShown){
+    this.menuShown=true;
+    this.navCtrl.push(OrderPage,{menu:JSON.stringify(menu)});
+    setTimeout(() => {
+      this.menuShown=false;                
+    }, 500);
+  }
 }
 
 }

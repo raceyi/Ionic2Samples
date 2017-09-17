@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-
+import {OrderPageModule} from '../pages/order/order.module';
 import { MenuItemComponent } from '../components/menu-item/menu-item';
 
 @NgModule({
@@ -17,7 +17,8 @@ import { MenuItemComponent } from '../components/menu-item/menu-item';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp,{mode:'ios'})
+    IonicModule.forRoot(MyApp,{mode:'ios'}),
+    OrderPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
