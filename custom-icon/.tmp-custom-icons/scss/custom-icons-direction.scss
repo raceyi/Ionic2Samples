@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "custom-icons-direction";
+  src: url('../assets/fonts/custom-icons-direction.eot');
+  src: url('../assets/fonts/custom-icons-direction.eot?#iefix') format('eot'),
+  url('../assets/fonts/custom-icons-direction.woff2') format('woff2'),
+  url('../assets/fonts/custom-icons-direction.woff') format('woff'),
+  url('../assets/fonts/custom-icons-direction.ttf') format('truetype'),
+  url('../assets/fonts/custom-icons-direction.svg#custom-icons-direction') format('svg');
+}
+
+%direction {
+  font-family: "custom-icons-direction";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@function direction-char($filename) {
+  $char: "";
+  
+    @if $filename == next {
+      $char: "\EA01";
+    }
+  
+    @if $filename == prev {
+      $char: "\EA02";
+    }
+  
+    @if $filename == up {
+      $char: "\EA03";
+    }
+  
+  @return $char;
+}
+
+@mixin direction($filename) {
+  &:before {
+    @extend %direction;
+    content: direction-char($filename);
+  }
+}
+
+
+  custom-icon.set-direction.icon-next {
+    @include direction(next);
+  }
+
+  custom-icon.set-direction.icon-prev {
+    @include direction(prev);
+  }
+
+  custom-icon.set-direction.icon-up {
+    @include direction(up);
+  }
+

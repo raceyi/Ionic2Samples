@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "custom-icons-tabs";
+  src: url('../assets/fonts/custom-icons-tabs.eot');
+  src: url('../assets/fonts/custom-icons-tabs.eot?#iefix') format('eot'),
+  url('../assets/fonts/custom-icons-tabs.woff2') format('woff2'),
+  url('../assets/fonts/custom-icons-tabs.woff') format('woff'),
+  url('../assets/fonts/custom-icons-tabs.ttf') format('truetype'),
+  url('../assets/fonts/custom-icons-tabs.svg#custom-icons-tabs') format('svg');
+}
+
+%tabs {
+  font-family: "custom-icons-tabs";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+}
+
+@function tabs-char($filename) {
+  $char: "";
+  
+    @if $filename == more {
+      $char: "\EA01";
+    }
+  
+    @if $filename == my {
+      $char: "\EA02";
+    }
+  
+    @if $filename == wallet {
+      $char: "\EA03";
+    }
+  
+  @return $char;
+}
+
+@mixin tabs($filename) {
+  &:before {
+    @extend %tabs;
+    content: tabs-char($filename);
+  }
+}
+
+
+  custom-icon.set-tabs.icon-more {
+    @include tabs(more);
+  }
+
+  custom-icon.set-tabs.icon-my {
+    @include tabs(my);
+  }
+
+  custom-icon.set-tabs.icon-wallet {
+    @include tabs(wallet);
+  }
+
