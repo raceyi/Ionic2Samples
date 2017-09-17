@@ -51,7 +51,7 @@
     "cordova": {
         "plugins": {
             "cordova-plugin-htj-kakaotalk": {
-                "KAKAO_APP_KEY": "2954fca8cbd32236d8bd05f1e7f7708d"
+                "KAKAO_APP_KEY": "XXXXXXXXXXXXXXX"
             },
             "cordova-plugin-appavailability": {},
             "cordova-plugin-console": {},
