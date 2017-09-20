@@ -14,7 +14,15 @@ menu: 기본 샘플에 메뉴를 추가했다.
 
 datetime: ion-datetime의 예로 moment를 사용하여 로컬시간으로 입력을 받는다.  
 
+Chapter 6장
 
+    1.restAPI1
+   
+    2.restAPI2
+
+    3.restAPI3
+
+    4.restAPI4
 
 Chapter 7장
 
