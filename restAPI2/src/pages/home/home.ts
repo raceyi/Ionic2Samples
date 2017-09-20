@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import {ServerProvider} from '../../providers/server-provider';
+import {ServerProvider} from '../../providers/server/server';
 
 @Component({
   selector: 'page-home',
@@ -8,6 +8,7 @@ import {ServerProvider} from '../../providers/server-provider';
 })
 export class HomePage {
   serverInfo:String;
+
   constructor(private serverProvider:ServerProvider,public navCtrl: NavController) {
 
   }
@@ -19,5 +20,4 @@ export class HomePage {
         this.serverInfo='서버정보를 알수 없습니다';
     });
   }
-
 }

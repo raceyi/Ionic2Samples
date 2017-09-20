@@ -1,46 +1,38 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams,AlertController } from 'ionic-angular';
-import {Http,Headers} from '@angular/http';
-import { TabsPage } from '../tabs/tabs';
-import {ServerProvider} from '../../providers/server-provider';
+import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
+import { Http,Headers} from '@angular/http';
+import {ServerProvider} from '../../providers/server/server';
+import {HomePage} from '../home/home';
 
-/*
-  Generated class for the Login page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+@IonicPage()
 @Component({
   selector: 'page-login',
-  templateUrl: 'login.html'
+  templateUrl: 'login.html',
 })
 export class LoginPage {
-
-  username:string;
+username:string;
   password:string;
 
   usernamePlaceHolder:string="아이디를 입력해주세요";
   passwordPlaceHolder:string="비밀번호를 입력해주세요";
 
   constructor(private serverProvider:ServerProvider,
-              private http:Http, private alertController:AlertController, 
-              public navCtrl: NavController, public navParams: NavParams) {
+            public navCtrl: NavController, public navParams: NavParams,
+            private http:Http,private alertController:AlertController) {
   }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
 
-
-  login(){
+login(){
     console.log("username:"+this.username);
     console.log("password:"+this.password);  
     let body={username:this.username,password:this.password};
     let url="/login";
     this.serverProvider.post(url,body).then((res:any)=>{
          if(res.result='success'){
-             this.navCtrl.setRoot(TabsPage);
+             this.navCtrl.setRoot(HomePage);
          }else{
              let alert =this.alertController.create({
                         title:'로그인에 실패했습니다.',
@@ -55,7 +47,6 @@ export class LoginPage {
           });  
 
     });
-  } 
-
 }
-
+ 
+}
