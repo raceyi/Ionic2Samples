@@ -1,30 +1,39 @@
 import { Component } from '@angular/core';
-import { Platform } from 'ionic-angular';
+import { Platform ,AlertController,Events} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import { TabsPage } from '../pages/tabs/tabs';
+import { StorageProvider } from '../providers/storage/storage';
+import { ServerProvider } from '../providers/server/server';
 import { LoginPage } from '../pages/login/login';
-
-import {ServerProvider} from '../providers/server-provider';
-import {StorageProvider} from '../providers/storage-provider';
+import { HomePage } from '../pages/home/home';
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any ;
+  rootPage:any;
+
   constructor(platform: Platform, 
               private storageProvider:StorageProvider,
-              private serverProvider:ServerProvider, 
-              statusBar: StatusBar, splashScreen: SplashScreen) {
-                
+              private serverProvider:ServerProvider,
+              statusBar: StatusBar, splashScreen: SplashScreen,
+              private alertController:AlertController,public events: Events) {
+
+    events.subscribe('out-of-date', () => {
+        let alert =this.alertController.create({
+                        title:'앱을 업데이트 해주시기 바랍니다.',
+                        buttons:['OK']
+                    });  
+             alert.present();     
+    });
+
     platform.ready().then(() => {
       this.storageProvider.getLoginInfo().then((res:any)=>{
           console.log(res);
           this.serverProvider.login(res.username,res.password).then((res:any)=>{
               console.log(res);
-              this.rootPage = TabsPage;
+              this.rootPage = HomePage;
           },(err)=>{
               // no login info
               console.log("login failure");
@@ -36,10 +45,9 @@ export class MyApp {
           console.log("no login info found");
           this.rootPage = LoginPage;
        });
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
       statusBar.styleDefault();
       splashScreen.hide();
     });
   }
 }
+
