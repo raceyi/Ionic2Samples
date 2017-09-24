@@ -23,7 +23,7 @@ export class ServerProvider {
         let url=url_in+"&version="+this.version;
         let headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        this.http.get(this.serverAddr+url,headers).subscribe((res:any)=>{
+        this.http.get(this.serverAddr+url,headers).subscribe((res:any)=>{ // get has problem with timeout. Why?
             console.log("get response:"+JSON.stringify(res.json()));
             resolve(res.json());
         },(err)=>{
