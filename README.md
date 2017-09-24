@@ -26,9 +26,9 @@ Chapter 4장
 
     3-2)password
 
-    4.menus
+    4.menu
 
-    5.
+    5.dialog
 
 
 Chapter 6장
