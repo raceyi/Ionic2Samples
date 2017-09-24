@@ -14,6 +14,23 @@ menu: 기본 샘플에 메뉴를 추가했다.
 
 datetime: ion-datetime의 예로 moment를 사용하여 로컬시간으로 입력을 받는다.  
 
+Chapter 4장
+
+    1. select-component
+
+    2-1)navigation
+    
+    2-2)tabs
+
+    3-1)params
+
+    3-2)password
+
+    4.menus
+
+    5.
+
+
 Chapter 6장
 
     1.restAPI1
