@@ -8,35 +8,24 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
-import { NextAbout } from '../pages/next-about/next-about';
-import { NextContact } from '../pages/next-contact/next-contact';
-import { NextHome } from '../pages/next-home/next-home';
-import { NextTabs } from '../pages/next-tabs/next-tabs';
-import { NextExit } from '../pages/next-exit/next-exit';
-import { NextPage } from '../pages/next-page/next-page';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
-import {StorageProvider} from '../providers/storage-provider';
-
+import {MorePageModule} from '../pages/more/more.module';
+import {NextPageModule} from '../pages/next/next.module';
 @NgModule({
   declarations: [
     MyApp,
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    NextPage,
-    NextExit,
-    NextAbout,
-    NextContact,
-    NextHome,
-    NextTabs
+    TabsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    MorePageModule,
+    NextPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -44,16 +33,9 @@ import {StorageProvider} from '../providers/storage-provider';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage,
-    NextPage,
-    NextExit,
-    NextAbout,
-    NextContact,
-    NextHome,
-    NextTabs
+    TabsPage
   ],
   providers: [
-    StorageProvider,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
