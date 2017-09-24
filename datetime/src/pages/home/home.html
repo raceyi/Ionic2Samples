@@ -1,13 +1,17 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+  
   <ion-item>
   <ion-label>Date</ion-label>
   <ion-datetime displayFormat="YYYY MM DD HH:mm" pickerFormat="DD HH" [(ngModel)]="myDate"></ion-datetime>
   </ion-item>
   <button ion-button (click)="checkInput()">입력</button>
+
 </ion-content>
