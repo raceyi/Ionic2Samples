@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label>숫자입력</ion-label>
+    <ion-input type="number" [(ngModel)]="input" placeholder="숫자를 입력해주세요."></ion-input>
+  </ion-item>
+  <button ion-button (click)="moveToNextPage()">move to next page</button>
+</ion-content>
