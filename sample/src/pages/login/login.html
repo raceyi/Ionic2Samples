@@ -1,0 +1,35 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list>
+  <ion-item>
+    <ion-label fixed>Username</ion-label>
+    <ion-input type="text" [placeholder]="usernamePlaceHolder" [(ngModel)]="username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label fixed>Password</ion-label>
+    <ion-input type="password" [placeholder]="passwordPlaceHolder" [(ngModel)]="password"></ion-input>
+  </ion-item>
+</ion-list>
+
+<button ion-button (click)="login()">제출</button>
+
+<ion-list >
+  <ion-item *ngIf="username!=undefined && username.length>0">
+    <p> username: {{username}}</p>
+  </ion-item>
+  <ion-item *ngIf="password!=undefined && password.length>0">
+    <p>password: {{password}}</p>
+  </ion-item>
+</ion-list>
+</ion-content>
