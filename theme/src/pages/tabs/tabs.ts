@@ -1,17 +1,17 @@
 import { Component } from '@angular/core';
 
-import { Color } from '../color/color';
-import { VwVh } from '../vw-vh/vw-vh';
-import { Grid } from '../grid/grid';
+import { AboutPage } from '../about/about';
+import { ContactPage } from '../contact/contact';
+import { HomePage } from '../home/home';
 
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
 
-  tab1Root = Grid;
-  tab2Root = VwVh;
-  tab3Root = Color;
+  tab1Root = HomePage;
+  tab2Root = AboutPage;
+  tab3Root = ContactPage;
 
   constructor() {
 

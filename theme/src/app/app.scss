@@ -1,4 +1,4 @@
-// http://ionicframework.com/docs/v2/theming/
+// http://ionicframework.com/docs/theming/
 
 
 // App Global Sass
@@ -14,13 +14,17 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-ion-header{
-    ion-title{
-        .toolbar-title-ios{
-            color:  #0000ff;
-        }
-        .toolbar-title-md{
-            color:  #0000ff;
-        }
+/*
+    .toolbar-title-ios{
+        color:Blue;
     }
+*/
+
+@font-face{
+    font-family: NatoSansBlack;   
+    src: url('../assets/fonts/NotoSansCJKkr-Black.otf') format('otf');
+}
+
+*{
+font-family: NatoSansBlack;
 }
