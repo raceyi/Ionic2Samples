@@ -1,0 +1,129 @@
+page-shop {     
+    .card-title {
+        position: absolute;
+        top: 60%;
+        height: 40%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        background:linear-gradient(transparent, color($colors,subColor2));
+        color: #fff;
+    }
+
+    .row-shopInfo{
+        padding: 10px 0px 10px 8px;
+        color: color($colors,subColor2); 
+        vertical-align: middle;
+        height: 55px;
+    }
+
+    .row-takeout{
+        margin-top: 5px;
+        height: 78px;
+    }
+
+    .row-takeout >ion-col{
+        text-align: center;
+    }
+
+    .row-takeout >ion-col > ion-icon {
+        font-size: 1.7em;
+    }
+
+    .div-menus{
+        width: 100%;
+        @include calc(height, "100%");
+        border-left: solid 8px;
+        border-right: solid 8px;
+        border-color:color($colors,subColor);
+        background-color: white;
+    }
+
+    .row-scrollbar{
+        height: 35px;
+    }
+
+    .col-scrollbar {
+        padding: 5px 0px 5px 0px;
+        font-size: 1.7em;
+        text-align: center;
+        height: 35px;
+
+    }
+    .row-categories-menus{
+        @include calc(height, "100% - 173px");
+
+    }
+
+    .col-categories{
+        flex: 0 0 30%;
+        height: 100%;
+
+        .segment-categories{
+            flex-direction: column;
+        }
+
+        .segment-ios .segment-button{
+            width: 100%;
+            text-align: left;
+            border: none;
+        }
+
+        .segment-ios-subColor2 .segment-button:hover:not(.segment-activated){
+            background-color: color($colors,subColor2);
+            color:white;
+        }
+    }
+
+    .col-menus{
+        height: 100%;
+    }
+    ////////////////////
+    .col-categories{
+        .list-ios {
+            margin: 0px;
+        }
+        .item-ios {
+            padding-left: 0px;
+        }
+        .item-inner{
+            background-color:color($colors,subColor); 
+            border-bottom:0px;
+        }
+        .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+            border-bottom: 0px;
+        }
+        .list-ios > .item-block:first-child {
+            border-top: 0px;
+        }
+        .list-ios .item-block .item-inner {
+            border-bottom: 0px;
+        }
+    }
+
+   .no-scroll >.scroll-content{
+        overflow: hidden;
+   }
+
+    .scroll-categories{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 5%;
+        margin : 0px;
+    }
+
+    .scroll-menus{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 5%;
+        margin : 0px;
+    }
+
+    .bg-sub1{
+    background-color:color($colors,subColor); 
+    }
+   
+}

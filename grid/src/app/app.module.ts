@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {GridPageModule} from '../pages/grid/grid.module';
+import {ShopPageModule} from '../pages/shop/shop.module';
 
 @NgModule({
   declarations: [
@@ -15,8 +16,9 @@ import {GridPageModule} from '../pages/grid/grid.module';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
-    GridPageModule
+    IonicModule.forRoot(MyApp,{mode:'ios'}),
+    GridPageModule,
+    ShopPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -1,0 +1,93 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" >
+    <ion-buttons center>
+        <button class="nav-btn" color="subColor2" small ion-button no-margin clear (click)="back()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+    <ion-title>{{shopInfo.takitId}}</ion-title>
+     <ion-buttons end>
+        <button color="subColor2" class="nav-btn" small ion-button no-margin clear>
+        <p> 매장정보</p>
+        </button>
+     </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll">
+    <div>
+    <ion-row class="row-shopInfo">
+        <ion-col>
+            <h2 no-margin>{{shopInfo.shopName}}</h2>
+            <p no-margin>{{shopInfo.serviceType}}</p>
+        </ion-col>
+    </ion-row>
+
+    <ion-row class="row-takeout">
+        <ion-col>
+            <ion-icon name="heart">
+            </ion-icon>
+            <p>내매장</p>
+        </ion-col>
+        <ion-col>
+            <ion-icon name="md-radio-button-off">
+            </ion-icon>
+            <p>takeout</p>
+        </ion-col>
+        <ion-col>
+            <ion-icon name="md-radio-button-off">
+            </ion-icon>
+            <p>table-24</p>
+        </ion-col>
+        <ion-col>
+            <ion-icon name="md-radio-button-off">
+            </ion-icon>
+            <p>delivery</p>
+        </ion-col>
+    </ion-row>
+    </div>
+
+    <div class="div-menus">
+        <ion-row class="row-scrollbar">
+            <ion-col class="col-scrollbar bg-sub1">
+                <ion-icon name="md-menu" color="white">
+                </ion-icon>
+            </ion-col>
+        </ion-row>
+        <ion-row class="row-categories-menus bg-sub1">
+            <ion-col class="col-categories">
+                <ion-scroll scrollY="true" class="scroll-categories">
+                    <ion-list>
+                        <ion-item *ngFor="let category of categories; let i=index">
+                        <button value="i" (click)="categoryClick(i)" [color]="configureButtonColor(i)" ion-button full  no-padding no-margin>
+                            {{category.categoryName}}
+                        </button>
+                        </ion-item>
+                    </ion-list>
+                </ion-scroll>
+            </ion-col>
+            <ion-col  class="col-menus">
+                <ion-scroll scrollY="true" class="scroll-menus">
+                <ion-list *ngFor="let menu of menus[categorySelected]">
+                    <button class="btn-menu radius-5" color="white" ion-button full no-padding no-margin>
+                        <ion-item>
+                            <ion-avatar item-left> <img class="img-shop" [src]="awsS3+menu.imagePath"></ion-avatar>
+                            <h2>{{menu.menuName}}</h2>
+                            <p>{{menu.price}}</p>
+                        </ion-item>
+                    </button>
+                </ion-list>
+                </ion-scroll>
+            </ion-col>
+        </ion-row>
+    </div>
+
+    <ion-fab bottom color="subColor3" style="right: 80px">
+        <button ion-fab >지난주문</button>
+    </ion-fab>
+    <ion-fab bottom right color="subColor3">
+        <button ion-fab >장바구니</button>
+    </ion-fab>
+
+</ion-content>
+
