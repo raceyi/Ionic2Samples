@@ -1,13 +1,12 @@
 # Ionic2Samples
 
-angular:기초적인 angular문법에 대해 소개합니다.
-
 Chapter 2장
 
     1.sample
 
 Chapter 3장
-
+    
+    1.angular
 
 Chapter 4장
 

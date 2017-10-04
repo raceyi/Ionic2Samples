@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>ngSwitch예제 {{appName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div padding>
+  <ion-segment [(ngModel)]="weather">
+    <ion-segment-button value="rainy">
+      rainy
+    </ion-segment-button>
+    <ion-segment-button value="sunny">
+      sunny
+    </ion-segment-button>
+    <ion-segment-button value="cloudy">
+      cloudy
+    </ion-segment-button>
+  </ion-segment>
+</div>
+  <div [ngSwitch]="weather">
+    <p *ngSwitchCase="'rainy'">우산을 준비해 주세요<p>
+    <p *ngSwitchCase="'sunny'">양산을 준비해 주세요<p>
+    <p *ngSwitchCase="'cloudy'">가볍게 외출하세요</p>
+  </div>
+</ion-content>

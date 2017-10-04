@@ -3,23 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
+import { AboutPage } from '../pages/about/about';
+import { ContactPage } from '../pages/contact/contact';
+import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
-import { Structural } from '../pages/structural/structural';
-import { NgClass } from '../pages/ng-class/ng-class';
-import { NgStyle } from '../pages/ng-style/ng-style';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { MyData } from '../providers/my-data';
-
-import { HttpModule } from '@angular/http';
+import { AppDataProvider } from '../providers/app-data/app-data';
+import { HttpModule} from '@angular/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    Structural,
-    NgClass,
-    NgStyle,
+    AboutPage,
+    ContactPage,
+    HomePage,
     TabsPage
   ],
   imports: [
@@ -30,16 +29,16 @@ import { HttpModule } from '@angular/http';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    Structural,
-    NgClass,
-    NgStyle,
+    AboutPage,
+    ContactPage,
+    HomePage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    MyData,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AppDataProvider
   ]
 })
 export class AppModule {}
