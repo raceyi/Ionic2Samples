@@ -24,6 +24,8 @@ Chapter 4장
 
     5.dialog
 
+    6.orientation
+
 Chapter 5장
 
     1.theme
