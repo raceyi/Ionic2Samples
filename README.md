@@ -10,7 +10,9 @@ Chapter 3장
 
 Chapter 4장
 
-    1. select-component
+    1-1) select-component
+
+    1-2) basic-compoents
 
     2-1)navigation
     
