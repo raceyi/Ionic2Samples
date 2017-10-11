@@ -9,12 +9,13 @@ export class HomePage {
     menu:any;
     amount:number;
     options:any;
-    imagePath:string="assets/";
+    dirPath:string="assets/";
 
   constructor(public navCtrl: NavController) {
-     this.menu={"menuName":"오채참치비빔밥","explanation":"","price":"3500",'imagePath':'bibimbob.png','description':'다섯가지 신선한 채소 비빔밥'} ;
-     this.amount=3500;
+     this.menu={"menuName":"오채참치비빔밥","explanation":"","price":3500,'imagePath':'bibimbob.png','description':'다섯가지 신선한 채소 비빔밥'} ;
      this.options=JSON.parse("[{\"name\":\"밥곱빼기\",\"price\":\"500\"},{\"name\":\"계란후라이\",\"choice\":[\"반숙\",\"완숙\"],\"default\":\"반숙\",\"price\":\"0\"}]");
+    
+     this.amount=this.menu.price;
      this.menu.count = 1;
   }
 
@@ -55,6 +56,4 @@ export class HomePage {
           }
       });
   }
-
-
 }
