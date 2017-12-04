@@ -2,7 +2,7 @@
 
 Chapter 2장
 
-    1.sample
+    1.onePage
 
 Chapter 3장
     
