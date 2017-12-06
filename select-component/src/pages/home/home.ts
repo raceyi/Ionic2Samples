@@ -13,7 +13,7 @@ export class HomePage {
     this.selectRef.open();  
   }
 
- gaming: string = "n64";
+  gaming: string = "n64";
   gender: string = "f";
   os: string;
   music: string;
@@ -31,5 +31,27 @@ export class HomePage {
 
   stpSelect() {
     console.log('STP selected');
+  }
+
+  language:string="English";
+
+  cancelText:string="cancel";
+  okText:string="ok";
+
+  englishButtonColor:string="secondary";
+  koreanButtonColor:string="primary";
+
+  selectKorean(){
+    this.cancelText="취소";
+    this.okText="확인";
+    this.englishButtonColor="primary";
+    this.koreanButtonColor="secondary";
+  }
+
+  selectEnglish(){
+    this.cancelText="cancel";
+    this.okText="ok";
+    this.englishButtonColor="secondary";
+    this.koreanButtonColor="primary";
   }
 }
