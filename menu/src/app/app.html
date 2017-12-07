@@ -1,7 +1,10 @@
 <ion-menu [content]="content">
 <ion-content>
-     <button ion-button icon-left full menuClose (click)="openSettingPage()">
+     <button ion-button icon-left full menuClose [hidden]="checkPageHidden('SettingPage')" (click)="openSettingPage()">
         <ion-icon name="settings"></ion-icon>설정  
+      </button>
+      <button ion-button icon-left full menuClose [hidden]="checkPageHidden('HomePage')" (click)="openHomePage()">
+        <ion-icon name="home"></ion-icon>홈  
       </button>
       <button ion-button icon-left full menuClose (click)="exit()">
         <ion-icon name="log-out"></ion-icon>종료  
