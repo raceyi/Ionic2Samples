@@ -1,0 +1,50 @@
+page-home {
+    $scroll-H:115px; 
+    $latest-W : 170px;
+    $latest-H : 80px;
+
+    .scroll-latest {
+        height: $scroll-H;
+        .scroll-content{
+            padding: 0;
+        }
+    }
+
+.problem{
+    .scroll-row-latest{
+        flex-wrap : inherit;
+        height: $latest-H;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        .scroll-col-latest {
+            overflow: inherit; //What is it?
+            width : $latest-W;
+            height: $latest-H;
+            margin-right: 9px;
+            
+        }
+    }    
+}    
+
+.normal{
+    .scroll-row-latest{
+        flex-wrap : inherit;
+        height: $latest-H;
+        margin-left: 10px;
+        margin-right: 10px;
+
+        .scroll-col-latest {
+            position: absolute;
+            width : $latest-W;
+            height: $latest-H;
+            margin-right: 9px;
+            
+        }
+        
+    }
+
+}
+
+
+}

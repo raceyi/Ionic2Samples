@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Fragmentation
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <!-- Problem -->
+    <div class="problem">
+        <ion-scroll scrollX="true" class="scroll-latest">
+            <ion-row class="scroll-row-latest">
+                 <ion-col *ngFor="let shop of shoplist" class="scroll-col-latest"  no-padding>
+                            <button  class="scroll-btn-shoplist" color="black" no-padding no-margin ion-button>
+                                <p class="scroll-p-shoplist" *ngIf="shop.takitId.length<=14">{{shop.takitId}}</p>
+                                <p class="scroll-p-shoplist" *ngIf="shop.takitId.length>14">{{shop.takitId.substring(0,13)}} ...</p>
+                            </button>
+                </ion-col>
+            </ion-row>
+        </ion-scroll>
+  </div>
+
+<!-- It works fine -->
+  <div class="normal">
+        <ion-scroll scrollX="true" class="scroll-latest">
+            <ion-row class="scroll-row-latest">
+                <ion-col *ngFor="let shop of shoplist;let i=index" [ngStyle]="{left:10+i*180+'px'}" class="scroll-col-latest"  no-padding>
+                            <button  class="scroll-btn-shoplist" color="black" no-padding no-margin  ion-button>
+                                <p class="scroll-p-shoplist" *ngIf="shop.takitId.length<=14">{{shop.takitId}}</p>
+                                <p class="scroll-p-shoplist" *ngIf="shop.takitId.length>14">{{shop.takitId.substring(0,13)}} ...</p>
+                            </button>
+                </ion-col>
+            </ion-row>
+        </ion-scroll>
+  </div>
+</ion-content>
