@@ -42,7 +42,22 @@ Chapter 6장
 
     3.restAPI3
 
+       $ionic cordova plugin add cordova-plugin-nativestorage
+
+       $npm install --save @ionic-native/native-storage
+
+       $npm install crypto-js --save
+       
+       $npm install @types/crypto-js --save
+
     4.restAPI4
+       $ionic cordova plugin add cordova-plugin-nativestorage
+
+       $npm install --save @ionic-native/native-storage
+
+       $npm install crypto-js --save
+
+       $npm install @types/crypto-js --save
 
 Chapter 7장
 

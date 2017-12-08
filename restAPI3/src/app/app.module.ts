@@ -8,11 +8,13 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ServerProvider } from '../providers/server/server';
 import {LoginPageModule} from '../pages/login/login.module';
-import { HttpModule} from '@angular/http';
+//import { HttpModule} from '@angular/http'; depreciated
 
 import { StorageProvider } from '../providers/storage/storage';
 import { MyErrorHandler } from '../classes/my-error-handler';
 import { NativeStorage } from '@ionic-native/native-storage';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     LoginPageModule
   ],

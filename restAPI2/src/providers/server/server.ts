@@ -36,7 +36,6 @@ post(url,body){
         else
             serverUrl="http://localhost:8100"+url;    //ionic server
        let headers = new HttpHeaders({'Content-Type': 'application/json'});
-       headers.append('Content-Type','application/json');
        this.http.post(serverUrl,body,{headers:headers}).subscribe((res:any)=>{
             resolve(res);
         },(err)=>{
