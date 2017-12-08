@@ -32,4 +32,14 @@
     <p>password: {{password}}</p>
   </ion-item>
 </ion-list>
+
+
+<ion-list >
+  <ion-item *ngIf="isValidString(username)">
+    <p> username: {{username}}</p>
+  </ion-item>
+  <ion-item *ngIf="isValidString(password)">
+    <p>password: {{password}}</p>
+  </ion-item>
+</ion-list>
 </ion-content>

@@ -23,6 +23,14 @@ export class LoginPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  isValidString(strVal){
+    console.log(strVal);
+    if(strVal!=undefined && strVal.length>0){
+        return true;
+    }
+    return false;
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
   }
