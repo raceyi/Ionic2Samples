@@ -7,7 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import { HttpModule} from '@angular/http';
+//import { HttpModule} from '@angular/http';  depreciated
+import { HttpClientModule } from '@angular/common/http';
+
 import { LoginPageModule } from '../pages/login/login.module';
 
 @NgModule({
@@ -17,7 +19,7 @@ import { LoginPageModule } from '../pages/login/login.module';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     LoginPageModule,
     IonicModule.forRoot(MyApp)
   ],

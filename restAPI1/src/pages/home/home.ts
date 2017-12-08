@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController ,AlertController,Platform} from 'ionic-angular';
-import { Http,Headers} from '@angular/http';
+//import { Http,Headers} from '@angular/http'; depreciated
+import { HttpClient ,HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'page-home',
@@ -8,8 +9,7 @@ import { Http,Headers} from '@angular/http';
 })
 export class HomePage {
 serverInfo:string;
-  constructor(
-              private http:Http,private alertController:AlertController,
+  constructor(private http:HttpClient,private alertController:AlertController,
               public navCtrl: NavController,private platform:Platform) {
 
   }
@@ -32,10 +32,8 @@ serverInfo:string;
     console.log("url:"+url);
     return new Promise((resolve,reject)=>{
         //curl www.takit.biz:8080/getInfo?Info=server
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        this.http.get(url,headers).subscribe((res:any)=>{
-            resolve(res.json());
+        this.http.get(url).subscribe((res:any)=>{
+            resolve(res);
         },(err)=>{
             reject(err);
         });
