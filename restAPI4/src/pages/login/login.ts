@@ -20,7 +20,7 @@ username:string;
   constructor(private serverProvider:ServerProvider,
             public navCtrl: NavController, public navParams: NavParams,
             public events: Events,
-            private http:Http,private alertController:AlertController) {
+            private alertController:AlertController) {
               
     events.subscribe('out-of-date', () => {
         let alert =this.alertController.create({

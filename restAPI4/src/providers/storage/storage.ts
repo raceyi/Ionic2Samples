@@ -8,7 +8,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
 @Injectable()
 export class StorageProvider {
 
-  constructor(public http: Http,private nativeStorage: NativeStorage) {
+  constructor(private nativeStorage: NativeStorage) {
     console.log('Hello StorageProvider Provider');
   }
 
