@@ -18,7 +18,7 @@ username:string;
 
   constructor(private serverProvider:ServerProvider,
             public navCtrl: NavController, public navParams: NavParams,
-            private http:Http,private alertController:AlertController) {
+            private alertController:AlertController) {
   }
 
   ionViewDidLoad() {

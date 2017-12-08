@@ -8,7 +8,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ServerProvider } from '../providers/server/server';
 import {LoginPageModule} from '../pages/login/login.module';
-import { HttpModule} from '@angular/http';
+//import { HttpModule} from '@angular/http'; depreciated
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { HttpModule} from '@angular/http';
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     LoginPageModule
   ],

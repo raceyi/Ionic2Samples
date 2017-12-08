@@ -6,11 +6,11 @@
   "proxies": [
     {
       "path": "/login",
-      "proxyUrl": "http://www.takit.biz:8080/login"
+      "proxyUrl": "http://localhost:8080/login"
     },
     {
       "path": "/getInfo",
-      "proxyUrl": "http://www.takit.biz:8080/getInfo"
+      "proxyUrl": "http://localhost:8080/getInfo"
     }
   ]
 }

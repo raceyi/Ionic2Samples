@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,AlertController } from 'ionic-angular';
-import { Http,Headers} from '@angular/http';
+//import { Http,Headers} from '@angular/http';  depreciated
+import { HttpClient ,HttpHeaders} from '@angular/common/http';
 import { HomePage } from '../home/home';
 
 @IonicPage()
@@ -17,7 +18,7 @@ export class LoginPage {
   passwordPlaceHolder:string="비밀번호를 입력해주세요";
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-            private http:Http,private alertController:AlertController) {
+            private http:HttpClient,private alertController:AlertController) {
   }
 
   ionViewDidLoad() {
@@ -27,14 +28,14 @@ export class LoginPage {
 login(){
     console.log("username:"+this.username);
     console.log("password:"+this.password);  
-    let body=JSON.stringify({username:this.username,password:this.password});
+    let body={username:this.username,password:this.password};
     //let url="http://www.takit.biz:8080/login"; // for android,ios  
     let url="http://localhost:8100/login"; // for ionic server
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
+    let headers = new HttpHeaders({'Content-Type': 'application/json'});
+
     this.http.post(url,body, {headers:headers}).subscribe((res:any)=>{               
-                console.log("res:"+JSON.stringify(res.json()));
-                let response=res.json();            
+                console.log("res:"+JSON.stringify(res));
+                let response=res;            
                 if(response.result=="success"){
                     this.navCtrl.setRoot(HomePage);
                 }else{

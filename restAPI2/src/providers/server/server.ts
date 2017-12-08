@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Http,Headers } from '@angular/http';
+//import { Http,Headers } from '@angular/http'; depreciated
 import { Platform} from 'ionic-angular';
+import { HttpClient ,HttpHeaders} from '@angular/common/http';
 
 import 'rxjs/add/operator/map';
 
@@ -8,7 +9,7 @@ import 'rxjs/add/operator/map';
 export class ServerProvider {
   serverAddr:string="http://www.takit.biz:8080";
 
-  constructor(public http: Http,private platform:Platform) {
+  constructor(public http: HttpClient,private platform:Platform) {
   }
 
   get(url){
@@ -19,10 +20,8 @@ export class ServerProvider {
             serverUrl=this.serverAddr+url; //android,ios
         else
             serverUrl="http://localhost:8100"+url;    //ionic server
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        this.http.get(serverUrl,headers).subscribe((res:any)=>{
-            resolve(res.json());
+        this.http.get(serverUrl).subscribe((res:any)=>{
+            resolve(res);
         },(err)=>{
             reject(err);
         });
@@ -36,10 +35,10 @@ post(url,body){
             serverUrl=this.serverAddr+url; //android,ios
         else
             serverUrl="http://localhost:8100"+url;    //ionic server
-       let headers = new Headers();
+       let headers = new HttpHeaders({'Content-Type': 'application/json'});
        headers.append('Content-Type','application/json');
-       this.http.post(serverUrl,JSON.stringify(body),{headers:headers}).subscribe((res:any)=>{
-            resolve(res.json());
+       this.http.post(serverUrl,body,{headers:headers}).subscribe((res:any)=>{
+            resolve(res);
         },(err)=>{
             reject(err);
         });
