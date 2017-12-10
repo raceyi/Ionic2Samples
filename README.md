@@ -71,6 +71,8 @@ Chapter 7장
 
     5.animation
 
+     $npm install @angular/animations
+
     6.transition
 
     7.multi-language
