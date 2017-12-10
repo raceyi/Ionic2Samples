@@ -42,8 +42,7 @@ export class HomePage {
             let activeVC = this.navController.getActive(); //get the active view
           
             let page = activeVC.instance; //page is the current view's instance i.e the current component I suppose
-
-            if (!(page != this.viewCtrl)) { // Check if the current page is pushed from a menu click. 
+            if(this.app.getRootNav().getActive()!=this.viewCtrl){                
                                             // HomePage와 동일한 페이지 인지를 확인합니다. 
                 
                 if (this.navController.canGoBack() || view && view.isOverlay) {
