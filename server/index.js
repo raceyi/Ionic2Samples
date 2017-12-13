@@ -3,6 +3,7 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var app = express();
+var multer = require('multer');
 
 var session = require('express-session');
 var FileStore = require('session-file-store')(session);
@@ -19,6 +20,20 @@ app.use(session({
       maxAge : 1000
     }
 }));
+
+var storage =   multer.diskStorage({
+          destination: function (req, file, callback) {
+            callback(null, './uploads');
+          },
+          filename: function (req, file, callback) {
+            callback(null, file.fieldname + '-' + Date.now());
+          }
+});
+
+var upload = multer({
+          dest: './uploads',
+          limits: {fileSize: 10000000, files:1},
+        }).single('file')
 
 app.listen(8080);
 
@@ -38,6 +53,22 @@ app.post('/login',function(req,res){
 app.get('/getInfo',function(req,res){
     console.log("getInfo comes"+req.url);
     return res.send(JSON.stringify({version:"1.0",name:"www.takit.biz"}));
+});
+
+app.post('/ocrFileSubmit',function(req,res){
+    console.log("/ocrFileSubmit");
+    upload(req,res,function(err) {
+        console.log(req.file);
+        console.log("upload filename:"+req.file.filename);
+        if(err) {
+            console.log("Error uploading file. "+ JSON.stringify(err));
+            return res.end("Error uploading file.");
+        }
+        var body={"result":"success"};
+         res.end(JSON.stringify(body));
+        //var img = req.file.path; // full name
+        //console.log("img:"+img); //upload file into s3 storage
+    });
 });
 
 app.use(function(req, res, next) {
