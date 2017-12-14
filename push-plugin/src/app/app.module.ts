@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Push, PushObject, PushOptions } from '@ionic-native/push';
 import {Clipboard} from '@ionic-native/clipboard';
+import { BackgroundMode } from '@ionic-native/background-mode';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {Clipboard} from '@ionic-native/clipboard';
     SplashScreen,
     Push,
     Clipboard,
+    BackgroundMode,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
