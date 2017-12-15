@@ -7,10 +7,12 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import {LoginPageModule} from '../pages/login/login.module';
 import {MyErrorHandler} from '../classes/my-error-handler';
+import {HomePage} from '../pages/home/home';
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    HomePage
   ],
   imports: [
     LoginPageModule,
