@@ -26,12 +26,6 @@ export class HomePage {
 
         this.backgroundMode.on("deactivate").subscribe(()=> {
             console.log("background mode has been deactivated");
-            this.pushObject.setApplicationIconBadgeNumber(0).then(()=>{
-              //It is the same as this.pushObject.clearAllNotifications();
-
-              },err=>{
-
-              });            
         });
         this.push.hasPermission()
           .then((res: any) => {
@@ -47,23 +41,22 @@ export class HomePage {
 
           const options: PushOptions = {
             android: {
-                senderID: 'XXXXXXXX' 
+                senderID: 'xxxxxxxxxxxx', //App's senderID. Please check your firebase configuration
+                clearBadge: true
             },
             ios: {
                 fcmSandbox: 'true', // 'true': development, 'false':production
                 alert: 'true',
                 badge: 'true',
-                sound: 'true'
+                sound: 'true',
+                clearBadge: true
             }
           };
 
           this.pushObject = this.push.init(options);
 
           this.pushObject.on('notification').subscribe((notification: any) =>{
-              console.log('Received a notification', JSON.stringify(notification))
-              this.pushObject.getApplicationIconBadgeNumber().then(number=>{
-                console.log("badge count:"+number);
-              });
+              console.log('Received a notification'+ JSON.stringify(notification));
           });
 
           this.pushObject.on('registration').subscribe((registration: any) =>{

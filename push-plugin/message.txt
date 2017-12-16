@@ -1,0 +1,31 @@
+<Android>
+
+{
+    "to":"registrationId",
+    "content_available":true,
+    "priority": "high",
+    "data":{
+            "title":"FCM을 통해서 푸시메시지 보내기?",
+            "message":"FCM으로 Android를 !!!",
+            "content-available":1,
+            "badge" : "2",
+            "sound" :"custom.wav"
+    }
+}
+-----------------------------------------------------------------------------------
+<iOS>
+{
+    "to":"registrationId",
+    "content_available":true,
+    "priority": "high",
+    "data":{
+    		"GCMType":"order"
+    } ,
+    "notification": {
+            "title":"GCM을 통해서 푸시메시지 보내기?",
+            "body":"GCM 으로 iOS 를 !!",
+            "badge" : "2",
+            "sound" :"custom.wav"
+    }
+}
+
