@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HttpClient ,HttpHeaders} from '@angular/common/http';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { Platform,AlertController } from 'ionic-angular';
+import { HTTP } from '@ionic-native/http';
 
 declare var window:any;
 
@@ -15,7 +15,7 @@ export class HomePage {
   browserRef;
   done:boolean=false;
 
-  constructor(private platform: Platform,public navCtrl: NavController,private httpClient: HttpClient,// It doesn't work under iOS. why? Hope it fixed soon. 
+  constructor(private platform: Platform,public navCtrl: NavController,private httpClient: HTTP,// It doesn't work under iOS. why? Hope it fixed soon. 
     private iab: InAppBrowser,private alertController:AlertController) {
       console.log("HomePage constructor");
   }
@@ -26,9 +26,8 @@ export class HomePage {
 
   getAccessToken(){
     return new Promise((resolve,reject)=>{ 
-      let headers = new HttpHeaders({'Content-Type': 'application/json'});
       let body={imp_key:"xxxxxxxxxxxxxx", imp_secret:"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"};
-      this.httpClient.post("https://api.iamport.kr/users/getToken",body,{headers: headers}).subscribe((res:any)=>{              
+      this.httpClient.post("https://api.iamport.kr/users/getToken",body,{}).then((res:any)=>{              
           console.log("res:"+JSON.stringify(res));
           resolve(res.response.access_token);
       },(err)=>{
@@ -40,7 +39,6 @@ export class HomePage {
   paymentCreditCardAgain(){
     this.getAccessToken().then((access_token:any)=>{
         console.log("access_token...:"+access_token);
-        let headers = new HttpHeaders({Authorization:access_token});
         let body={customer_uid:"your-customer-unique-id", 
                   merchant_uid:'merchant_' + new Date().getTime(),  // 결제건별로 고유한 값을 지정합니다.
                   amount:3300,
@@ -54,7 +52,7 @@ export class HomePage {
                   //card_quota:0, //할부 개월수  ,
                   //custom_data:"" 
                 };
-        this.httpClient.post("https://api.iamport.kr/subscribe/payments/again",body,{headers: headers}).subscribe((res)=>{              
+        this.httpClient.post("https://api.iamport.kr/subscribe/payments/again",body,{Authorization:access_token}).then((res)=>{              
             console.log("res:"+JSON.stringify(res));
             // "res:{"code":0,"message":null,
             //       "response":{"amount":3300,"apply_num":"62748487","bank_code":null,"bank_name":null,"buyer_addr":null,"buyer_email":null,
