@@ -10,7 +10,7 @@ POST https://android.googleapis.com/gcm/send
             "message":"FCM으로 Android를 !!!",
             "content-available":1,
             "badge" : "2",
-            "sound" :"custom.wav"
+            "sound" :"custom"
     }
 }
 -----------------------------------------------------------------------------------
