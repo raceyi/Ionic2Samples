@@ -37,11 +37,10 @@ export class HomePage {
             }
           });
 
-          console.log("android ...");
-
           const options: PushOptions = {
             android: {
                 senderID: 'xxxxxxxxxxxx', //App's senderID. Please check your firebase configuration
+                sound: 'true',
                 clearBadge: true
             },
             ios: {
