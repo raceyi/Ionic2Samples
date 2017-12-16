@@ -1,5 +1,6 @@
-<Android>
+POST https://android.googleapis.com/gcm/send
 
+<Android>
 {
     "to":"registrationId",
     "content_available":true,
