@@ -94,10 +94,43 @@ Chapter 8장
     
     1-4)push-plugin
  
-    1-5)inapp-browser-plugin
+    1-5)inapp-browser-plugin,iamport
 
     1-6)media-plugin
 
     2.kakao-talk-plugin
+
+    $ionic start kakao-talk-plugin blank
+
+    $ionic cordova platform add android
+
+    $ionic cordova platform add ios
+
+    $ionic cordova plugin add  https://github.com/taejaehan/cordova-kakaotalk.git --variable KAKAO_APP_KEY=XXXXXXXXXXX
+ 
+    $ionic cordova plugin add cordova-plugin-appavailability
+
+    $npm install --save @ionic-native/app-availability
+
+    $ionic cordova plugin add cordova-plugin-inappbrowser
+
+    $npm install --save @ionic-native/in-app-browser
+ 
+    $git checkout kakao-talk-plugin
+
+    kakaotalk.gradle파일 수정
+ 
+    $find . -name KakaoTalk.java
+
+    $find . -name KakaoTalk.m
+ 
+    KakaoTalk.java 복사
+
+    KakaoTalk.m 복사
+
+    $ionic cordova build android
+ 
+    $ionic cordova build ios
+ 
 
  
