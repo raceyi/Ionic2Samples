@@ -107,7 +107,7 @@ Chapter 8장
 
         $ionic cordova platform add ios
 
-        $ionic cordova plugin add  ../plugin/KakaoTalk --variable KAKAO_APP_KEY=XXXXXXXXXXX
+        $ionic cordova plugin add  ../plugin/KakaoTalk/ --variable KAKAO_APP_KEY=XXXXXXXXXXX
  
         $ionic cordova plugin add cordova-plugin-appavailability
 
