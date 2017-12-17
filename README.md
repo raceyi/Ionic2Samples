@@ -100,37 +100,37 @@ Chapter 8장
 
     2.kakao-talk-plugin
 
-    $ionic start kakao-talk-plugin blank
+        $ionic start kakao-talk-plugin blank
 
-    $ionic cordova platform add android
+        $ionic cordova platform add android
 
-    $ionic cordova platform add ios
+        $ionic cordova platform add ios
 
-    $ionic cordova plugin add  https://github.com/taejaehan/cordova-kakaotalk.git --variable KAKAO_APP_KEY=XXXXXXXXXXX
+        $ionic cordova plugin add  https://github.com/taejaehan/cordova-kakaotalk.git --variable KAKAO_APP_KEY=XXXXXXXXXXX
  
-    $ionic cordova plugin add cordova-plugin-appavailability
+        $ionic cordova plugin add cordova-plugin-appavailability
 
-    $npm install --save @ionic-native/app-availability
+        $npm install --save @ionic-native/app-availability
 
-    $ionic cordova plugin add cordova-plugin-inappbrowser
+        $ionic cordova plugin add cordova-plugin-inappbrowser
 
-    $npm install --save @ionic-native/in-app-browser
+        $npm install --save @ionic-native/in-app-browser
  
-    $git checkout kakao-talk-plugin
+        $git checkout kakao-talk-plugin
 
-    kakaotalk.gradle파일 수정
+        kakaotalk.gradle파일 수정
  
-    $find . -name KakaoTalk.java
+        $find . -name KakaoTalk.java
 
-    $find . -name KakaoTalk.m
+        $find . -name KakaoTalk.m
  
-    KakaoTalk.java 복사
+        KakaoTalk.java 복사
 
-    KakaoTalk.m 복사
+        KakaoTalk.m 복사
 
-    $ionic cordova build android
+        $ionic cordova build android
  
-    $ionic cordova build ios
+        $ionic cordova build ios
  
 
  
