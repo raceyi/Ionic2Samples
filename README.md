@@ -99,14 +99,15 @@ Chapter 8장
     1-6)media-plugin
 
     2.kakao-talk-plugin
-
+        plugin 다운로드 후 최신 sdk로 수정. KakaoTalk.m, KakaoTalk.java수정        
+       
         $ionic start kakao-talk-plugin blank
 
         $ionic cordova platform add android
 
         $ionic cordova platform add ios
 
-        $ionic cordova plugin add  https://github.com/taejaehan/cordova-kakaotalk.git --variable KAKAO_APP_KEY=XXXXXXXXXXX
+        $ionic cordova plugin add  ../plugin/KakaoTalk.java --variable KAKAO_APP_KEY=XXXXXXXXXXX
  
         $ionic cordova plugin add cordova-plugin-appavailability
 
@@ -118,19 +119,7 @@ Chapter 8장
  
         $git checkout kakao-talk-plugin
 
-        kakao.gradle파일 수정
- 
-        $find . -name KakaoTalk.java
-
-        $find . -name KakaoTalk.m
- 
-        KakaoTalk.java 복사
-
-        KakaoTalk.m 복사
-
         $ionic cordova build android
  
         $ionic cordova build ios
- 
-
  
