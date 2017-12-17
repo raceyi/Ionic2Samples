@@ -118,7 +118,7 @@ Chapter 8장
  
         $git checkout kakao-talk-plugin
 
-        kakaotalk.gradle파일 수정
+        kakao.gradle파일 수정
  
         $find . -name KakaoTalk.java
 
