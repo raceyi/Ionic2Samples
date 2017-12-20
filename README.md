@@ -1,5 +1,7 @@
 # Ionic2Samples
 
+ionic2+관련 질문은 https://www.facebook.com/ionic2plus에 올려주세요.
+
 Chapter 2장
 
     1.sample
