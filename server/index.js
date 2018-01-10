@@ -2,11 +2,14 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var cors = require('cors');
 var app = express();
 var multer = require('multer');
 
 var session = require('express-session');
 var FileStore = require('session-file-store')(session);
+
+app.use(cors());
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -35,7 +38,9 @@ var upload = multer({
           limits: {fileSize: 10000000, files:1},
         }).single('file')
 
-app.listen(8080);
+app.listen(8080,function(){
+    console.log('CORS-enabled web server listening on port 80');
+});
 
 app.post('/login',function(req,res){
     console.log("req.body:"+JSON.stringify(req.body));
