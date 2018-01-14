@@ -2,6 +2,34 @@
 
 ionic2+관련 질문은 https://www.facebook.com/ionic2plus에 올려주세요.
 
+*기본 샘플 빌드 방법 
+
+    $git clone https://github.com/raceyi/Ionic2Samples
+
+    $cd Ionic2Samples
+
+    $rm -rf sample
+
+    $ionic start sample blanke
+
+    $git checkout sample
+
+    $cd sample
+
+    $ionic serve
+
+    $ionic cordova platform add android
+
+    $ionic cordova platform add ios
+
+    $ionic corodva build android
+
+    $ionic cordova build ios
+
+    *각 디렉토리 별로 설치해야할 node module과 cordova plugin이 다릅니다.
+
+    추후 정리해 올리겠습니다. 현재 인프런 강의를 통해 각 샘플의 설치 방법에 대해 아실수 있습니다.
+
 Chapter 2장
 
     1.sample
