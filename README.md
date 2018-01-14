@@ -10,7 +10,7 @@ ionic2+관련 질문은 https://www.facebook.com/ionic2plus에 올려주세요.
 
     $rm -rf sample
 
-    $ionic start sample blanke
+    $ionic start sample blank
 
     $git checkout sample
 
