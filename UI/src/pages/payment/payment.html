@@ -1,0 +1,119 @@
+<!--
+  Generated template for the PaymentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton>
+  <ion-buttons start>
+    <button style="background-color:#6441a5;color:white;" (click)="back()" ><ion-icon style="font-size:4.8vw;" name="ios-arrow-back"></ion-icon></button>
+  </ion-buttons>
+  <ion-title style="color:white;"> 결제정보
+  </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+<div class="pickup-area">
+<ion-row  class="pickup-method">
+  <ion-col text-center  > 
+    <button class="circle" [style.background-color]="inStoreColor" (click)="selectInStore()" ion-button> &nbsp;</button>
+  </ion-col>
+  <ion-col text-center>
+    <button class="circle" [style.background-color]="takeoutColor" (click)="selectTakeOut()" ion-button> &nbsp;</button>
+  </ion-col>
+  <ion-col text-center>
+    <button class="circle" [style.background-color]="deliveryColor" (click)="selectDelivery()" ion-button> &nbsp;</button>
+  </ion-col>
+</ion-row>
+<ion-row  class="pickup-method">
+  <ion-col [style.color]="inStoreColor"  no-padding no-margin text-center> 
+    매장
+  </ion-col>
+  <ion-col [style.color]="takeoutColor" no-padding no-margin text-center>
+    포장
+  </ion-col>
+  <ion-col [style.color]="deliveryColor" no-padding no-margin text-center>
+    배달
+  </ion-col>
+</ion-row>
+<div text-center *ngIf="takeout==2" class="delivery-text-area">
+    <ion-textarea [(ngModel)]="deliveryAddress" placeholder="배송지를 입력해주세요."></ion-textarea>
+</div>
+</div>
+
+<div class="pay-amount">
+  <ion-row  class="pay-amount-label" no-padding no-margin>
+    <ion-col no-padding no-margin text-left> 결제내역</ion-col>
+    <ion-col no-padding no-margin text-right>
+        <amount-display [amount]="totalAmount" > </amount-display>
+    </ion-col>
+  </ion-row>
+<ion-row class="delivery-fee">
+<ion-col class="coupon-label" no-padding no-margin>
+배달비
+</ion-col>
+<ion-col no-padding no-margin text-right>
+  <amount-display [amount]="storageProvider.deliveryFee" > </amount-display>
+</ion-col>
+</ion-row>
+
+<ion-row class="coupon-button" no-padding no-margin>
+<ion-col class="coupon-label" no-padding no-margin>
+앱주문 할인금액             
+</ion-col>
+<ion-col no-padding no-margin text-right>
+    <amount-display [amount]="discount"> </amount-display>
+</ion-col>
+</ion-row>
+
+  <ion-row class="amount-value" no-padding no-margin>
+    <ion-col no-padding no-margin>
+    <b>결제 금액</b>
+    </ion-col>
+    <ion-col text-right no-padding no-margin>
+      <b><amount-display [amount]="payAmount"> </amount-display></b>
+    </ion-col>
+  </ion-row>
+</div>
+<div class="paymethod">
+  <ion-row  class="pay-amount-label" no-padding no-margin>
+    결제방식
+  </ion-row>
+<div class="scroll-div">
+        <ion-scroll scrollX="true" class="scroll-latest">
+            <ion-row class="scroll-row-latest">
+                 <ion-col [ngClass]="currentCardClassesArray[i]" [style.background-color]="payment.background" *ngFor="let payment of storageProvider.payInfo;let i=index;"  no-padding>
+                            <ion-row class="card-remove"><ion-col col-10 no-padding no-margin >&nbsp;</ion-col> 
+                                    <ion-col col-2 no-padding no-margin><button (click)="removeCard(i)" no-padding no-margin ion-button clear style="color:white;">
+                                                                        <ion-icon name="md-close"></ion-icon>
+                                                                        </button>
+                                    </ion-col>
+                            </ion-row>
+                            <button class="card-button"  (click)="cardSelect(i)" full clear no-padding no-margin ion-button>
+                              {{payment.info.name}} 
+                            </button>                     
+                            <button style="font-size:4vw;" (click)="cardSelect(i)" class="card-button" full clear no-padding no-margin ion-button>
+                              {{payment.info.mask_no}} 
+                            </button>
+                </ion-col>
+                 <ion-col text-center class="card-add card-button scroll-col-latest"  no-padding>
+                              <ion-row text-center class="card-add-label"><b style="font-size:4.5vw;">카드 등록</b></ion-row>
+                              <ion-row text-center class="card-add-label"><span style="font-size:3.4vw;">10원이 결제되고 등록 후 취소됩니다</span></ion-row>
+                              <ion-row text-center>
+                                <button style="background-color:#e8e8e8;;color:#6441a5;" no-padding no-margin full ion-button>
+                                    <b style="font-size:4.8vw;"><ion-icon name="ios-add-circle-outline"></ion-icon></b>
+                                </button>
+                              </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-scroll>
+</div>
+
+</div>
+
+
+</ion-content>
+<ion-footer>
+  <button no-margin ion-button full (click)="pay()">결제하기</button>
+</ion-footer>

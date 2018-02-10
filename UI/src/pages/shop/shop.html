@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar hideBackButton="true" >
+      <!--
+    <ion-buttons center>
+        <button class="nav-btn" color="subColor2" small ion-button no-margin clear (click)="back()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+      -->
+    <ion-title>{{shopInfo.shopName}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll">
+    <div class="div-menus">
+        <ion-row class="row-categories-menus bg-sub1">
+            <ion-col class="col-categories">
+                <ion-scroll scrollY="true" class="scroll-categories">
+                    <ion-list>
+                        <ion-item *ngFor="let category of categories; let i=index">
+                        <button value="i" (click)="categoryClick(i)" [color]="configureButtonColor(i)" ion-button full  no-padding no-margin>
+                            {{category.categoryName}}
+                        </button>
+                        </ion-item>
+                    </ion-list>
+                </ion-scroll>
+            </ion-col>
+            <ion-col  class="col-menus">
+                <ion-scroll scrollY="true" class="scroll-menus">
+                <ion-list *ngFor="let menu of menus[categorySelected]">
+                    <button class="btn-menu radius-5" (click)="enterMenu(menu)" color="white" ion-button full no-padding no-margin>
+                        <ion-item>
+                            <ion-avatar item-left> <img class="img-shop" [src]="awsS3+menu.imagePath"></ion-avatar>
+                            <h2>{{menu.menuName}}</h2>
+                            <p>{{menu.price}}</p>
+                        </ion-item>
+                    </button>
+                </ion-list>
+                </ion-scroll>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>
+

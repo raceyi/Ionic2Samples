@@ -1,0 +1,138 @@
+page-signup {
+  ion-header{
+      height:calc((50/667)*100vh);
+      background-color: $default-color; 
+  }
+
+  .toolbar-background-ios {
+      background: $default-color;
+  }
+
+  .back-button{
+      color:white;
+      background-color:$default-color; 
+  }
+
+  ion-title{
+      font-size:4.8vw;
+  }
+
+  .toolbar-title-ios {
+    text-align: center;
+    font-size: 4.8vw;
+    font-weight: 600;
+    color: white;
+  }
+
+////////////////////////////////////////////
+    ion-content{
+     	background-color:white;   
+    }
+
+    .scroll-content{
+     	background-color:white;           
+    }
+
+    .upper{
+        height: calc((50/667)*100vh);
+    }
+
+    .list-ios .item-block .item-inner {
+        border-bottom: 0px;
+    }
+
+    .list-ios > .item-block:first-child {
+         border-top: 0px; 
+    }
+
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+        border-bottom: 0px;
+    }
+
+    .keypad-input{
+        ion-label{
+            font-size: $default-font-size;
+        }
+        .item-inner .input-wrapper{    
+            border-bottom: 0.55px solid black !important;
+        }
+    }
+
+    .list-ios {
+        margin-left: calc((43/375)*100vw);
+        margin-right: calc((43/375)*100vw);
+    }
+
+    .under_input{
+        height:calc((50/667)*100vh);
+    }
+
+    .one-button{
+        width:calc((310/375)*100vw);
+        height:calc((42/667)*100vh);
+        border-radius: 4px;
+        border-width: 1px;
+        border-style: solid;
+        border-color:$default-color;
+        color:$default-color;
+        font-size:4vw !important;
+        margin:0px;
+    }
+
+   .agreement-check-box{
+        margin-left: calc((33/375)*100vw);
+        margin-right: calc((33/375)*100vw);
+        width:calc((310/375)*100vw);
+        height:calc((42/667)*100vh);
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 4px;
+        border-color:$default-color;
+        font-size:4vw !important;        
+   }
+
+    .details{
+        margin-left: calc((51/375)*100vw);
+        margin-right: calc((51/375)*100vw);
+        margin-top:calc((20/667)*100vh);
+        color: #4a4a4a;
+    }
+
+    .explain{
+        margin-left: calc((33/375)*100vw);  
+        width: calc((310/375)*100vw); 
+        height: calc((317/667)*100vh); 
+        border-radius: 8px;
+        border: solid 1px #6441a5; 
+        font-size:3.4vw;
+    }
+
+    pre{
+        height: calc((300/667)*100vh);
+        padding-left: 5px;
+    }
+
+  .label-ios {
+    margin: 0px 8px 0px 0;
+  }
+
+  .value-label{
+      height:calc((20/667)*100vh);
+      font-size: $default-font-size;
+  }
+
+  .keypad-button{
+      width: calc((290/375)*100vw);
+      padding:0px;
+      span{
+        color:gray;
+        border-bottom: black;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        justify-content: left;
+        font-size: $default-font-size;   
+      }
+  }
+
+
+}
