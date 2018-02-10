@@ -7,18 +7,20 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import {OrderPageModule} from '../pages/order/order.module';
-import { MenuItemComponent } from '../components/menu-item/menu-item';
+import {ShopPageModule} from '../pages/shop/shop.module';
+import {ComponentsModule} from '../components/components.module';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    MenuItemComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp,{mode:'ios'}),
-    OrderPageModule
+    OrderPageModule,
+    ShopPageModule,
+    ComponentsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

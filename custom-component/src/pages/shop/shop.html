@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Sample
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+   <ion-row>
+        <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-1 class="segmentButton" *ngFor="let category of categories">
+        <ion-segment #categorySegment [(ngModel)]="categorySelected">
+                <ion-segment-button [value]="category" (click)="categoryChange(category)">
+                  {{category}}
+                </ion-segment-button>
+        </ion-segment>        
+        </ion-col>
+   </ion-row>
+  </ion-grid>
+  <ion-card (swipe)="swipeCategory($event)">
+          <ion-grid> 
+          <ion-row>
+                <ion-col col-4 col-sm-4 col-md-3 col-lg-2 col-xl-1 *ngFor="let menu of menus">
+                  <menu-item [menu]="menu" (select)="select($event)"> </menu-item>
+                </ion-col>  
+          </ion-row>
+          </ion-grid>
+      </ion-card> 
+</ion-content>
