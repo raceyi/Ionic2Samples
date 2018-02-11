@@ -19,7 +19,7 @@ export class HomePage {
 
   constructor(private platform: Platform,public navCtrl: NavController,
             private backgroundMode:BackgroundMode,
-            private httpClient: HTTP,// It doesn't work under iOS. why? Hope it fixed soon. 
+            private httpClient: HTTP, 
             private iab: InAppBrowser,private alertController:AlertController) {
       console.log("HomePage constructor");
       /*
@@ -67,15 +67,24 @@ export class HomePage {
                 };
         this.httpClient.post("https://api.iamport.kr/subscribe/payments/again",body,{Authorization:access_token}).then((res)=>{              
             console.log("res:"+JSON.stringify(res));
-            if(res.status==200){
+           if(res.status==200){
                 let data=JSON.parse(res.data);
-                if(data.code==0)
+                if(data.code==0){
                     console.log("success "+data.code);
-                else
-                    console.log("failure "+data.code+" message:"+data.message);                    
-            }else{
-                console.log("failure");
-            }
+                    let alert = this.alertController.create({
+                        title: "success",
+                        buttons: ['OK']
+                    });
+                    alert.present();                     
+                }else{
+                    console.log("failure "+data.code+" message:"+data.message);   
+                    let alert = this.alertController.create({
+                        title: data.code,
+                        subTitle:data.message,
+                        buttons: ['OK']
+                    });
+                    alert.present(); 
+                }             
         },(err)=>{
             console.log("err:"+JSON.stringify(err));
         });
