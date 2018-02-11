@@ -1,0 +1,36 @@
+page-login {
+ .logo{
+        position: absolute;
+        left:calc((132/375)*100vw);
+        top: calc((187/667)*100vh);
+        width:calc((132/375)*100vw);
+    }
+
+    .first{
+        position: absolute;
+        left:calc((37/375)*100vw);
+        top: calc((354/667)*100vh);
+    }
+
+    .second{
+        position: absolute;
+        left:calc((37/375)*100vw);
+        top: calc((419/667)*100vh);
+    }
+
+    .login-button{
+        width:calc((302/375)*100vw);
+        height:calc((50/667)*100vh);
+        border-radius: 8px;
+        border: solid 1px #6441a5;
+        font-size:$default-font-size;
+        font-weight: 500;
+        letter-spacing: -0.3px;
+        text-align: center;
+        color: #6441a5;
+    }
+
+    .button-text{
+        position: absolute;
+    }
+}

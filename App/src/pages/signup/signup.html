@@ -1,0 +1,63 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar hideBackButton>
+  <ion-buttons start>
+    <button (click)="back()" style="color:white;background-color:#6441a5;"><ion-icon style="font-size:4.8vw;" name="ios-arrow-back"></ion-icon></button>
+  </ion-buttons>
+  <ion-title>  앱가입 
+  </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-list>
+    <ion-item class="keypad-input" >
+    <ion-label floating> 이메일(필수)</ion-label>
+    <ion-input  type="email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label class="value-label" style="margin-top:0px;" >결제비밀번호(필수)</ion-label>
+    </ion-item>
+    <ion-item>
+    <button ion-button *ngIf="!passwordMask" class="keypad-button" clear (click)="passwordInput()">6자리 숫자</button>
+    <button ion-button *ngIf="passwordMask" class="keypad-button" clear (click)="passwordInput()">******</button>
+    </ion-item>
+    <ion-item>
+    <ion-label class="value-label" >결제비밀번호 확인(필수)</ion-label>
+    </ion-item>
+    <ion-item>
+    <button ion-button *ngIf="!passwordConfirmMask" class="keypad-button" clear (click)="passwordConfirmInput()" >6자리 숫자</button>
+    <button ion-button *ngIf="passwordConfirmMask" class="keypad-button" clear (click)="passwordConfirmInput()">******</button>    
+    </ion-item>
+    </ion-list>
+
+    <div class="under-buttons">
+    </div>
+    <div text-center>
+      <button ion-button outline round  [ngStyle]="buttonColor" class="one-button" (click)="checked()">
+        <ion-icon [hidden]="agreement" name="ios-radio-button-off-outline"></ion-icon><span [hidden]="agreement">&nbsp;&nbsp;&nbsp;&nbsp;동의하고 가입하기</span>
+        <ion-icon [hidden]="!agreement" name="ios-checkmark-circle-outline"></ion-icon><span [hidden]="!agreement">&nbsp;&nbsp;&nbsp;&nbsp;동의하고 가입하기</span>
+      </button>
+    </div>  
+      <p text-wrap text-left class="details">
+        본인은 <b>만 14세 이상</b>이며 타킷서비스의 
+        <a button (click)="show()" clear><span style="text-decoration: underline;"><b>이용약관</b></span></a>을 확인하였으며 이에 <b>동의합니다</b>.
+      </p>
+      
+      <div class="explain"  [hidden]="!userAgreementShown">
+        <pre>
+      이용약관
+      ..........................................................
+      ..........................................................
+      ..........................................................
+      ..........................................................
+      ..........................................................
+      </pre> 
+      </div>
+</ion-content>

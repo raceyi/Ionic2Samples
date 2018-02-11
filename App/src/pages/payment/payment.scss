@@ -1,0 +1,275 @@
+page-payment {
+ .toolbar-background-ios {
+        background:$default-color;
+    }
+
+    .header-ios .toolbar-background-ios, .footer-ios .toolbar-background-ios {
+        border-style: hidden;
+    }
+
+    ion-title{
+        font-size:4.8vw;
+        padding:0px;
+    }
+
+   .toolbar-title-ios{
+        color:white;
+   }
+
+   .content-ios{
+        background-color:#f2f2f2;
+   }
+
+    .pickup-area{
+        background-color:white;
+        padding-bottom: calc((10/667)*100vh);  
+    }
+
+   .pickup-method{
+        .circle{
+            background-color: $default-color;
+            width: calc((47/375)*100vw);
+            height: calc((47/375)*100vw);  
+            border-radius: 50%;
+        }
+        padding-left:calc((40/375)*100vw);
+        padding-right:calc((40/375)*100vw);
+        font-size:4.5vw;
+        color:$default-color;
+
+   }
+
+    .cash-available{
+        background-color: #f2f2f2;
+        font-size:4.5vw;
+        color:$default-color;
+        .receipt-info{
+            font-size:3.2vw;
+        }
+
+        ion-row{
+            padding-left:calc((20/375)*100vw);
+            padding-right:calc((20/375)*100vw);
+        }
+        padding-top: calc((10/375)*100vw);
+        padding-bottom:calc((10/375)*100vw);
+    }
+
+    .pay-amount{
+        font-size:4.5vw;
+        background-color:white;
+        ion-row{
+            padding-left:calc((20/375)*100vw);
+            padding-right:calc((20/375)*100vw);
+        }        
+        margin-top:  calc((10/667)*100vh); 
+        .pay-amount-label{
+            padding-top:calc((15/667)*100vh); 
+            padding-bottom:calc((15/667)*100vh); 
+            color:$default-color;
+        }     
+        .amount-value{
+            padding-top:calc((15/667)*100vh); 
+            padding-bottom:calc((15/667)*100vh); 
+            color:$default-color;            
+        } 
+        .delivery-fee{
+            padding-bottom:calc((15/667)*100vh);
+        }
+    }
+
+    .discount{
+        font-size:4.5vw;
+        background-color:white;
+        ion-row{
+            padding-left:calc((20/375)*100vw);
+            padding-right:calc((20/375)*100vw);
+        }       
+        button{
+            height:calc((20/667)*100vh);
+        } 
+
+        .discount-label{
+            padding-top:calc((10/667)*100vh);
+            padding-bottom:calc((10/667)*100vh);
+            color: #6441a5;
+        }
+
+        .coupon-button{
+            padding-bottom:calc((10/667)*100vh);
+            color: #4a4a4a;
+            .coupon-label{
+                padding-top: calc((5/667)*100vh);
+            }
+        }
+    }
+
+    .notice-section{
+        background-color: #f2f2f2;
+        color: #4a4a4a;
+        font-size: 3.2vw;
+        padding-top:calc((10/667)*100vh);
+        padding-bottom:calc((10/667)*100vh);
+        padding-left:calc((20/375)*100vw);
+        padding-right:calc((20/375)*100vw);
+    }
+
+    $scroll-H:  calc((180/667)*100vh);
+    $latest-H : calc((180/667)*100vh);
+    
+    .scroll-latest {
+        height: $scroll-H;
+        .scroll-content{
+            padding: 0;
+        }
+    }
+
+  .paymethod{
+    margin-top:calc((10/667)*100vh);
+    .pay-amount-label {
+        padding-left:calc((20/375)*100vw);
+        padding-top: calc((15/667)*100vh);
+        //padding-bottom: calc((15/667)*100vh);
+        color: #6441a5;
+        font-size:4.5vw;
+    }
+    background-color:white;
+
+    .scroll-div{
+        .scroll-row-latest{
+            flex-wrap : inherit;
+            height: $latest-H;
+            margin-left: calc((62/375)*100vw);
+            margin-right: calc((62/375)*100vw);
+            ion-row{
+                width : calc((227/375)*100vw);   
+            }
+
+            .cash-select-border{
+                //height: calc((171/667)*100vh) !important; // increase height, width
+                border-style:solid !important;
+                border-color: #33b9c6 !important;
+                border-radius: 8px;
+                border-left: calc((6/375)*100vw);
+                border-right:calc((6/375)*100vw);
+                border-top:calc((6/667)*100vh);
+                border-bottom:calc((6/667)*100vh);
+            }
+
+            .card-select-border{
+                border-style:solid !important;
+                border-color:$default-color !important;
+                border-radius: 8px;
+                border-left: calc((6/375)*100vw);
+                border-right:calc((6/375)*100vw);
+                border-top:calc((6/667)*100vh);
+                border-bottom:calc((6/667)*100vh);
+            }
+ 
+            .card-unselect-border{
+                border-radius: 8px;
+ 	            box-shadow: 0 0 7px 0 rgba(70, 70, 70, 0.5);
+            }
+
+            .card-button{
+                width : calc((227/375)*100vw);
+                height: calc((60/667)*100vh);
+                color:white;
+            }
+
+            .cash-card{
+                background-color:$default-color;
+                color:white;
+                padding-top:calc((10/667)*100vh);
+                .cash-label{
+                    padding-top: calc((24/667)*100vh);
+                    height:calc((47/667)*100vh);                    
+                }
+                .cash-value{
+                    padding-top:calc((7/667)*100vh);
+                    padding-bottom:calc((17/667)*100vh);
+                }
+                .cash-value-row{
+                    padding-bottom:calc((7/667)*100vh); ///////////////////////                     
+                } 
+                 
+                 ion-row{
+                     button{
+                        height:calc((23/667)*100vh);
+                     }
+                     border-top: solid 0.5px #ffffff;
+                     ion-col{
+                        button{
+                                color:white;
+                                padding-bottom:calc((7/667)*100vh); // Please check it on the phone
+                                span{
+                                    font-size:4vw;
+                                }
+                        }
+                     }
+                 }
+                 .cash-charge{
+                     border-top: solid 0.5px #ffffff;
+                 }
+            }
+
+            .card-add{
+                background-color: #e8e8e8;
+                color:#4a4a4a;;
+                border-radius: 8px;
+ 	            box-shadow: 0 0 7px 0 rgba(70, 70, 70, 0.5);
+                .card-add-label{
+                    justify-content: center;
+                    padding-top: calc((15/667)*100vh);
+                }
+            }
+
+            .card-card{
+                //background-color:$default-color;
+                color:white;
+                .card-remove{
+                    height:calc((25/667)*100vh);
+                }
+                button{
+                    height:calc((30/667)*100vh);
+                }
+            }
+
+            .scroll-col-latest {
+                overflow: inherit; 
+                margin-left: calc((12/375)*100vw);
+                margin-right:calc((12/375)*100vw);
+                margin-top:calc((25/667)*100vh);
+                margin-bottom:calc((25/667)*100vh);
+                height:calc((121/667)*100vh);
+            }      
+
+            .select-scroll-col-latest {
+                overflow: inherit; 
+                margin-top:calc((19/667)*100vh);
+                height:calc((133/667)*100vh);
+            }            
+                  
+        }    
+    } 
+  }
+
+    .notice{
+        color:$default-color;
+        margin-top:calc((4/667)*100vh);
+        margin-bottom:calc((4/667)*100vh);
+    }
+
+   .delivery-text-area{
+        background-color:#f2f2f2;
+        margin-left:calc((20/375)*100vw);
+        margin-right:calc((20/375)*100vw);
+        ion-textarea{
+            width: calc((334/375)*100vw); 
+            height: calc((65/667)*100vh); 
+            background-color: #ffffff;
+            border: solid 1px #bdbdbd;
+        }
+   }
+
+}

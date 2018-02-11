@@ -1,0 +1,7 @@
+<!-- Generated template for the AmountDisplayComponent component -->
+<div>
+   <span *ngIf="(amount-amount%1000)>0" >{{(amount-amount%1000)/1000}},</span>
+   <span *ngIf="(amount%1000)>=100">{{amount%1000}}</span>
+   <span *ngIf="(amount%1000)<100 && (amount%1000)>=10">0{{amount%1000}}</span>
+   <span *ngIf="(amount%1000)<10">00{{amount%1000}}</span>
+</div>
