@@ -152,4 +152,64 @@ Chapter 8장
         $ionic cordova build android
  
         $ionic cordova build ios
+
+
+Chapter 10장
+
+        1. UI
+
+        $ionic start UI blank
+        
+        $git checkout UI
+
+        $cd UI
+
+        $ionic serve
+
+        2. App
  
+        $ionic start App blank
+
+        $git checkout App
+
+        $cd App
+
+        $ionic cordova platform add android
+
+        $ionic cordova platform add ios
+
+        $ionic cordova plugin add cordova-plugin-facebook4 --save --variable APP_ID=“XXXXXXXX” --variable APP_NAME=“App”
+ 
+        $ npm install --save @ionic-native/facebook
+
+        $ ionic cordova plugin add cordova-plugin-appavailability
+
+        $ npm install --save @ionic-native/app-availability
+
+        $ ionic cordova plugin add ../KakaoTalk --variable KAKAO_APP_KEY=XXXXXX
+
+        $cordova plugin add https://github.com/loicknuchel/cordova-device-accounts.git
+
+        $ionic cordova plugin add cordova-plugin-android-permissions
+
+        $npm install --save @ionic-native/android-permissions
+
+        $ionic cordova plugin add cordova-plugin-nativestorage
+
+        $npm install --save @ionic-native/native-storage
+
+        $ionic cordova plugin add cordova-plugin-inappbrowser
+
+        $npm install --save @ionic-native/in-app-browser
+
+        $ionic cordova plugin add cordova-sms-plugin
+
+        $npm install --save @ionic-native/sms
+
+        $ionic cordova plugin add cordova-plugin-email-composer
+
+        $npm install crypto-js
+
+        $npm install @types/crypto-js --save
+
+
