@@ -1,0 +1,37 @@
+page-home {
+    .scroll-content{
+        overflow-y:hidden;
+        padding:0px;
+    }
+
+    ion-scroll{
+        height:70vh;
+        overflow-y:auto;
+        .scroll-content{
+            height:70vh  !important;
+        }
+    }
+
+    .list-ios {
+        margin: 0px;
+        .list-item{
+            .label-ios {
+                margin: 0;
+            }
+            .list-item-label{
+                padding-top:10px;
+            }
+        }
+        .item-ios.item-block .item-inner {
+            border: 0px !important;
+        }
+    }
+
+    .no-item-border-bottom.item-ios.item-block .item-inner {
+        border-bottom: 0px !important;
+    }
+
+    .list-ios > .item-block:first-child {
+        border-top: 0px;
+    }
+}
