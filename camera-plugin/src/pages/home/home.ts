@@ -96,10 +96,6 @@ export class HomePage {
                     console.log("upload:"+JSON.stringify(response));
                     let result=JSON.parse(response.response);
                     console.log("result.result:"+result.result);
-                    this.ngZone.run(()=>{
-                      //console.log("progress 100%");
-                      //this.workoutProgress='100%';
-                    })
                     resolve();
                 },(err)=>{
                     reject(err);
