@@ -37,14 +37,14 @@ export class HomePage {
                     console.log("res:"+JSON.stringify(res));  
                     progressBarLoader.dismiss();
                     if(res.resultType=="SUCCESS"){
-                        let link=res.success.link;
-                        console.log("link:"+link);
+                        let scheme=res.success.scheme;  //config.xml에 <allow-intent href="supertoss:*" /> 추가필요함
+                        console.log("scheme:"+scheme);
                         if(this.platform.is('ios')){
-                            window.open(link);
+                            window.open(scheme);
                         }else{ // android
                             const options = {
                                             action: this.webIntent.ACTION_VIEW,
-                                            url: link
+                                            url:scheme 
                                         };
                             this.webIntent.startActivity(options);
                         }
