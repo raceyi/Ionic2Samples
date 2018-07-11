@@ -212,7 +212,6 @@ Chapter 10장
 
         $npm install @types/crypto-js --save
 
-
 Toss연동
 
         $ionic start toss blank
