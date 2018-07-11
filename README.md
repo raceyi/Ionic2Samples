@@ -213,20 +213,5 @@ Chapter 10장
         $npm install @types/crypto-js --save
 
 
-Toss연동
-
-        $ionic start toss blank
-
-        $git checkout toss 
-
-        $cd toss 
-
-        $ionic cordova platform add android
-
-        $ionic cordova platform add ios        
-
-        $ionic cordova plugin add com-darryncampbell-cordova-plugin-intent
-
-        $npm install --save @ionic-native/web-intent
- 
+Toss연동: 토스의 요청으로 삭제합니다. 
 
